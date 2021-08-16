@@ -45,7 +45,7 @@
             <!-- <a class="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="alternative"></a> -->
 
             <!-- Text Logo - Use this if you don't have a graphic logo -->
-            <a class="navbar-brand logo-text" href="index.html">Mirko</a>
+            <a class="navbar-brand logo-text" href="Home.aspx">Mind Academy</a>
 
             <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -54,10 +54,10 @@
             <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault" >
                 <ul class="navbar-nav ms-auto navbar-nav-scroll">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#header">Home</a>
+                        <a class="nav-link active" aria-current="page" href="Home.aspx">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
+                        <a class="nav-link" href="About.aspx">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#services">Services</a>
@@ -100,6 +100,7 @@
     <!-- end of navigation -->
 
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
             </asp:ContentPlaceHolder>
 
         <!-- Footer -->
@@ -195,7 +196,7 @@
     <div class="bottom py-2 text-light" >
         <div class="container d-flex justify-content-between">
             <div>
-                <p>Copyright © Your name</p>
+                <p>Copyright © Mind Academy</p>
             </div>
             <div>
                 <i class="fab fa-cc-visa fa-lg p-1"></i>
