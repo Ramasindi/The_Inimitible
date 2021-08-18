@@ -67,7 +67,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
     <Content Include="assets\images\about.jpg" />
     <Content Include="assets\images\article-details-large.jpg" />
     <Content Include="assets\images\article-details-small.jpg" />
@@ -134,9 +133,13 @@
     <Content Include="js\purecounter.min.js" />
     <Content Include="js\script.js" />
     <Content Include="js\swiper.min.js" />
+    <Content Include="Login.aspx" />
+    <Content Include="login.html" />
     <Content Include="obj\Debug\ProjectTest.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\ProjectTest.dll" />
     <Content Include="obj\Debug\ProjectTest.pdb" />
+    <Content Include="Register.aspx" />
+    <Content Include="register.html" />
     <Content Include="template\nozama-lite.1.4.5\nozama-lite\assets\vendor\alpha-color-picker\alpha-color-picker.css" />
     <Content Include="template\nozama-lite.1.4.5\nozama-lite\assets\vendor\alpha-color-picker\alpha-color-picker.js" />
     <Content Include="template\nozama-lite.1.4.5\nozama-lite\assets\vendor\alpha-color-picker\transparency-grid.png" />
@@ -209,19 +212,19 @@
     <Content Include="webfonts\fa-solid-900.svg" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterLayout.Master.cs">
       <DependentUpon>MasterLayout.Master</DependentUpon>
@@ -232,6 +235,13 @@
     </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterLayout.Master" />

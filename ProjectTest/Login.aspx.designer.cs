@@ -10,7 +10,7 @@
 
 namespace ProjectTest
 {
-    public partial class About
+    public partial class Login
     {
     }
 }

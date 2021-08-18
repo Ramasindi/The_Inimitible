@@ -1,5 +1,5 @@
 /* DESCRIPTION: CUSTOM JS FILE */
-
+ 
 /* NAVIGATION*/
 // COLLAPSE THE NAVBAR BY ADDING THE TOP-NAV-COLLAPSE CLASS
 window.onscroll = function () {
@@ -128,3 +128,139 @@ AOS.init({
     easing: "ease",
     once: true, // whether animation should happen only once - while scrolling down
 });
+
+//FIREBASE
+
+// Initialize Firebase
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+///paste firebaseConfig here
+
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+//end Config
+var currentUser = {};
+var provider = new firebase.auth.GoogleAuthProvider();
+//Button for Registering new-users
+$("#signUpNewUser").click(function () {
+    var email = $("#NewEmail").val();
+    var password = $("#NewPassword").val();
+    var reEnterpassword = $("#ReEnterPassword").val();
+    if (password !== reEnterpassword) {
+        alert("Passwords do not match");
+        console.log("Password 1: " + password + " Password 2: " + reEnterpassword);
+    } else {
+        console.log("New user = " + email + " " + password);
+        CreateNewUser(email, password);
+        window.location.href = "Home.aspx"
+    }
+
+    
+});
+//Button for signing/login existing user
+//button listerners
+$("#signInUser").click(function () {
+    var email = $("#email").val();
+    var password = $("#password").val();
+    console.log("Existing user =" + email + " " + password);
+    SignIn(email, password);
+    window.location.href = "Home.aspx"
+});
+//On Register
+$("#googleSignIn").click(function () {
+    console.log("Google Sign in");
+    SignUserWithGoogle();
+    
+
+});
+//On Login
+$("#googleLogin").click(function () {
+    console.log("Google Sign in");
+    SignUserWithGoogle();
+    
+});
+//log user out
+//On Login
+$("#logout").click(function () {
+    SignOut()
+    console.log("logged out");
+
+});
+
+//Functions with Firebase
+//This function is for creating/Registering new users
+function CreateNewUser(email, password) {
+    firebase.default.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorMessage);
+        alert(errorMessage);
+    });
+}
+//This function is for signing in existing users
+function SignIn(email, password) {
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorMessage);
+        alert(errorMessage);
+    });
+}
+//Sign in user with google account popup
+function SignUserWithGoogle() {
+    firebase.auth()
+        .signInWithPopup(provider)
+        .then((result) => {
+            /** @type {firebase.auth.OAuthCredential} */
+            var credential = result.credential;
+
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            var token = credential.accessToken;
+            // The signed-in user info.
+            var user = result.user;
+            window.location.href = "Home.aspx"
+            console.log(user);
+            // ...
+        }).catch((error) => {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log(errorMessage);
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // ...
+        });
+}
+//IF there is an active user
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        var uid = user.uid;
+        // ...
+        currentUser = user;
+        
+        document.getElementById("myAccount").innerHTML = currentUser.displayName;
+        
+    } else {
+        // User is signed out
+        // ...
+    }
+});
+
+//logging user out
+function SignOut() {
+    firebase.auth().signOut();//.then(function() {
+
+    // Sign-out successful.
+    //console.log("User has signed out");
+    //}).catch(function(error) {
+    // An error happened.
+    //console.log("An error occured signing user out");
+    //});
+}
