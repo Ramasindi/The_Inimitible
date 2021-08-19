@@ -36,8 +36,15 @@
                         <div class="form-group py-2">
                             <button style="color: black;" id="googleSignIn" class="btn btn-primary form-control">Google Sign in</button>
                         </div>
+                        <p><b>OR</b></p>
+                        <div class="form-group py-2">
+                            <button style="color: black;" id="facebooksignin" class="btn btn-primary form-control">Facebook Login</button>
+                        </div>
                         <br /><br /><br /><br />
                     </div>
+                    <div class="col-lg-6 d-flex align-items-center" data-aos="fade-down">
+                    <img class="img-fluid d-none d-lg-block" src="./assets/images/register.jpg" style="min-width: 100%; min-height: 100%; width: auto; height: auto" alt="register">        
+                </div>
                 </div>
 
             </div>

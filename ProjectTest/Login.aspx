@@ -18,7 +18,7 @@
         <div class="container text-center">
             <div>
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-6" data-aos="fade-right">
                         <div class="form-group py-2">
                             <input type="email" class="form-control form-control-input" id="email" placeholder="Enter Email">
                         </div>
@@ -36,8 +36,15 @@
                         <div class="form-group py-2">
                             <button style="color: black;" id="googleLogin" class="btn btn-primary form-control">Google Sign in</button>
                         </div>
+                        <p><b>OR</b></p>
+                        <div class="form-group py-2">
+                            <button style="color: black;" id="facebooklogin" class="btn btn-primary form-control">Facebook Sign up</button>
+                        </div>
                         <br /><br /><br /><br />
                     </div>
+                    <div class="col-lg-6 d-flex align-items-center" data-aos="fade-down">
+                    <img class="img-fluid d-none d-lg-block" src="./assets/images/login.jpg" style="min-width: 100%; min-height: 100%; width: auto; height: auto" alt="login">        
+                </div>
                 </div>
                 
             </div>

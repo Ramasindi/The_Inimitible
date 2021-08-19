@@ -132,11 +132,6 @@ AOS.init({
 //FIREBASE
 
 // Initialize Firebase
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-
-///paste firebaseConfig here
-
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 //end Config
@@ -174,11 +169,21 @@ $("#googleSignIn").click(function () {
     
 
 });
+$("#facebooksignin").click(function () {
+    console.log("Facebook sign in");
+    signWithFB();
+
+});
 //On Login
 $("#googleLogin").click(function () {
     console.log("Google Sign in");
     SignUserWithGoogle();
     
+});
+$("#facebooklogin").click(function () {
+    console.log("Facebook login");
+    signWithFB();
+
 });
 //log user out
 //On Login
@@ -221,7 +226,7 @@ function SignUserWithGoogle() {
             var token = credential.accessToken;
             // The signed-in user info.
             var user = result.user;
-            window.location.href = "Home.aspx"
+            window.location.href = "Home.aspx";
             console.log(user);
             // ...
         }).catch((error) => {
@@ -233,6 +238,42 @@ function SignUserWithGoogle() {
             var email = error.email;
             // The firebase.auth.AuthCredential type that was used.
             var credential = error.credential;
+            // ...
+        });
+}
+
+//login user with facebook
+var fbprovider = new firebase.auth.FacebookAuthProvider();
+function signWithFB()
+{
+    firebase
+        .auth()
+        .signInWithPopup(fbprovider)
+        .then((result) => {
+           
+            var credential = result.credential;
+
+            // The signed-in user info.
+            var user = result.user;
+            window.location.href = "Home.aspx";
+            // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+            var accessToken = credential.accessToken;
+            console.log(user);
+            console.log(accessToken);
+            // ...
+        })
+        .catch((error) => {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            console.log(errorCode);
+            console.log(credential);
+            console.log(email);
+            console.log(errorMessage);
             // ...
         });
 }
