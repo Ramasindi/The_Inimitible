@@ -30,15 +30,15 @@
                             <input type="password" class="form-control form-control-input" id="ReEnterPassword" placeholder="Re-Enter password">
                         </div>
                         <div class="form-group py-2">
-                            <button style="color: black;" id="signUpNewUser" class="btn btn-primary form-control">Sign up</button>
+                            <button style="color: black;" id="signUpNewUser" class="btn btn-primary form-control"><b>Sign up</b></button>
                         </div>
                         <p><b>OR</b></p>
                         <div class="form-group py-2">
-                            <button style="color: black;" id="googleSignIn" class="btn btn-primary form-control">Google Sign in</button>
+                            <button style="color: orangered;" id="googleSignIn" class="btn btn-primary form-control"><b>Google Sign in</b></button>
                         </div>
                         <p><b>OR</b></p>
                         <div class="form-group py-2">
-                            <button style="color: black;" id="facebooksignin" class="btn btn-primary form-control">Facebook Login</button>
+                            <button style="color: midnightblue;" id="facebooksignin" class="btn btn-primary form-control"><b>Facebook Login</b></button>
                         </div>
                         <br /><br /><br /><br />
                     </div>
@@ -57,10 +57,4 @@
         <img src="assets/images/up-arrow.png" alt="alternative">
     </button>
     <!-- end of back to top button -->
-    <!-- Scripts -->
-    <script src="./js/bootstrap.min.js"></script><!-- Bootstrap framework -->
-    <script src="./js/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
-    <script src="./js/swiper.min.js"></script><!-- Swiper for image and text sliders -->
-    <script src="./js/aos.js"></script><!-- AOS on Animation Scroll -->
-    <script src="./js/script.js"></script>  <!-- Custom scripts -->
 </asp:Content>

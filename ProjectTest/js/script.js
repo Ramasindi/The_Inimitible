@@ -1,5 +1,3 @@
-/* DESCRIPTION: CUSTOM JS FILE */
- 
 /* NAVIGATION*/
 // COLLAPSE THE NAVBAR BY ADDING THE TOP-NAV-COLLAPSE CLASS
 window.onscroll = function () {
@@ -148,7 +146,6 @@ $("#signUpNewUser").click(function () {
     } else {
         console.log("New user = " + email + " " + password);
         CreateNewUser(email, password);
-        window.location.href = "Home.aspx"
     }
 
     
@@ -160,7 +157,7 @@ $("#signInUser").click(function () {
     var password = $("#password").val();
     console.log("Existing user =" + email + " " + password);
     SignIn(email, password);
-    window.location.href = "Home.aspx"
+   
 });
 //On Register
 $("#googleSignIn").click(function () {
@@ -186,7 +183,6 @@ $("#facebooklogin").click(function () {
 
 });
 //log user out
-//On Login
 $("#logout").click(function () {
     SignOut()
     console.log("logged out");
@@ -196,7 +192,10 @@ $("#logout").click(function () {
 //Functions with Firebase
 //This function is for creating/Registering new users
 function CreateNewUser(email, password) {
-    firebase.default.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+  firebase.default.auth().createUserWithEmailAndPassword(email, password)
+    .then(function (result){
+        window.location = "Home.aspx";
+    }).catch(function (error) {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
@@ -206,7 +205,10 @@ function CreateNewUser(email, password) {
 }
 //This function is for signing in existing users
 function SignIn(email, password) {
-    firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+    firebase.auth().signInWithEmailAndPassword(email, password)
+        .then(function (result) {
+            location.replace("Home.aspx");
+        }).catch(function (error) {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
@@ -226,7 +228,7 @@ function SignUserWithGoogle() {
             var token = credential.accessToken;
             // The signed-in user info.
             var user = result.user;
-            window.location.href = "Home.aspx";
+           window.location = "Home.aspx";
             console.log(user);
             // ...
         }).catch((error) => {
@@ -255,7 +257,7 @@ function signWithFB()
 
             // The signed-in user info.
             var user = result.user;
-            window.location.href = "Home.aspx";
+           window.location = "Home.aspx";
             // This gives you a Facebook Access Token. You can use it to access the Facebook API.
             var accessToken = credential.accessToken;
             console.log(user);
@@ -285,14 +287,18 @@ firebase.auth().onAuthStateChanged((user) => {
         var uid = user.uid;
         // ...
         currentUser = user;
-        
-        document.getElementById("myAccount").innerHTML = currentUser.displayName;
-        
+
+        if (currentUser.displayName !== null) {
+            document.getElementById("myAccount").innerHTML = currentUser.displayName;
+        } else {
+            document.getElementById("myAccount").innerHTML = user.email;
+        }
     } else {
         // User is signed out
         // ...
     }
 });
+
 
 //logging user out
 function SignOut() {

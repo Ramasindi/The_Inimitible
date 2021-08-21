@@ -6,18 +6,21 @@
  <!-- Home -->
     <section class="home py-5 d-flex align-items-center" id="header">
         <div class="container text-light py-5"  data-aos="fade-right"> 
-            <h1 class="headline">Best <span class="home_text">Broadband</span><br>Internet Plans For You</h1>
-            <p class="para para-light py-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus tempore accusamus quis magnam doloremque itaque ad modi, pariatur iste labore similique officiis impedit aspernatur aperiam facere architecto. Eligendi, repellendus inventore!</p>
+            <h1 class="headline">The <span class="home_text">Mind Academy</span><br>Tutoring Portal Created Just For You!</h1>
+            <p class="para para-light py-3">Get premium lessons at the comfort of your home. What are you waiting for? The time
+                is NOW. No more paying for transport to go to a saturday school. Mind Academy Got Your Back. The number one tutoring portal you can get 
+                at affordable rates.
+            </p>
             <div class="d-flex align-items-center">
                 <p class="p-2"><i class="fas fa-laptop-house fa-lg"></i></p>
-                <p>Lorem ipsum dolor sit amet.</p>  
+                <p>100% Online Tutoring</p>  
             </div>
             <div class="d-flex align-items-center">
                 <p class="p-2"><i class="fas fa-wifi fa-lg"></i></p>
-                <p>Lorem ipsum dolor sit amet.</p>  
+                <p>24/7 Support</p>  
             </div>
             <div class="my-3">
-                <a class="btn" href="#plans">View Plans</a>
+                <a class="btn" href="#plans">View Subscription Plans</a>
             </div>
         </div> <!-- end of container -->
     </section> <!-- end of home -->

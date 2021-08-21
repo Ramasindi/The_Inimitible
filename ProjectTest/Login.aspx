@@ -30,15 +30,15 @@
         <input type="email" class="form-control form-control-input" id="exampleFormControlInput3" placeholder="Enter email">
     </div>-->
                         <div class="form-group py-2">
-                            <button style="color: black;" id="signInUser" class="btn btn-primary form-control">Sign in</button>
+                            <button style="color: black;" id="signInUser" class="btn btn-primary form-control"><b>Sign in</b></button>
                         </div>
                         <p><b>OR</b></p>
                         <div class="form-group py-2">
-                            <button style="color: black;" id="googleLogin" class="btn btn-primary form-control">Google Sign in</button>
+                            <button style="color: orangered;" id="googleLogin" class="btn btn-primary form-control"><b>Google Sign in</b></button>
                         </div>
                         <p><b>OR</b></p>
                         <div class="form-group py-2">
-                            <button style="color: black;" id="facebooklogin" class="btn btn-primary form-control">Facebook Sign up</button>
+                            <button style="color: midnightblue;" id="facebooklogin" class="btn btn-primary form-control"><b>Facebook Sign up</b></button>
                         </div>
                         <br /><br /><br /><br />
                     </div>
@@ -58,10 +58,5 @@
         <img src="assets/images/up-arrow.png" alt="alternative">
     </button>
     <!-- end of back to top button -->
-    <!-- Scripts -->
-    <script src="./js/bootstrap.min.js"></script><!-- Bootstrap framework -->
-    <script src="./js/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
-    <script src="./js/swiper.min.js"></script><!-- Swiper for image and text sliders -->
-    <script src="./js/aos.js"></script><!-- AOS on Animation Scroll -->
-    <script src="./js/script.js"></script>  <!-- Custom scripts -->
+   
 </asp:Content>
