@@ -17,21 +17,22 @@
     <div class="ex-basic-1 pt-5 pb-5">
         <div class="container text-center">
             <div>
+               
                 <div class="row">
-                    <div class="col-lg-6" data-aos="fade-right">
-                        <div class="form-group py-2">
-                            <input type="email" class="form-control form-control-input" id="email" placeholder="Enter Email">
-                        </div>
+                    <div class="col-sm-6" data-aos="fade-right">
+                            <div class="form-group py-2 input-group-sm">
+                                <input type="email" required class="form-control form-control-input" id="email" placeholder="Enter Email">
+                            </div>
+                            <div class="form-group py-2 input-group-sm">
+                                <input type="password" required class="form-control form-control-input" id="password" placeholder="Enter password">
 
-                        <div class="form-group py-2">
-                            <input type="password" class="form-control form-control-input" id="password" placeholder="Enter password">
-                        </div>
-                        <!--<div class="form-group py-2">
-        <input type="email" class="form-control form-control-input" id="exampleFormControlInput3" placeholder="Enter email">
-    </div>-->
-                        <div class="form-group py-2">
-                            <button style="color: black;" id="signInUser" class="btn btn-primary form-control"><b>Sign in</b></button>
-                        </div>
+                            </div>
+                            <div class="alert-sm alert-danger" id="loginAlert">
+                                  
+                            </div>
+                            <div class="form-group py-2">
+                                <button style="color: black;" id="signInUser" class="btn btn-primary form-control"><b>Sign in</b></button>
+                            </div>
                         <p><b>OR</b></p>
                         <div class="form-group py-2">
                             <button style="color: orangered;" id="googleLogin" class="btn btn-primary form-control"><b>Google Sign in</b></button>
@@ -40,12 +41,18 @@
                         <div class="form-group py-2">
                             <button style="color: midnightblue;" id="facebooklogin" class="btn btn-primary form-control"><b>Facebook Sign up</b></button>
                         </div>
-                        <br /><br /><br /><br />
+                        
                     </div>
                     <div class="col-lg-6 d-flex align-items-center" data-aos="fade-down">
-                    <img class="img-fluid d-none d-lg-block" src="./assets/images/login.jpg" style="min-width: 100%; min-height: 100%; width: auto; height: auto" alt="login">        
+                        <img class="img-fluid d-none d-lg-block" src="./assets/images/login.jpg" loading="eager" alt="login">        
+                    </div>
                 </div>
-                </div>
+                    <br />
+                    <div class="alert alert-light">
+                        <a href="Register.aspx" class="alert-link"><strong>Not yet Registerd?</strong> | </a>
+                        <a href="#" class="alert-link"><strong>Forgot password?</strong></a>
+                      </div>
+                    <br /><br /><br /><br />
                 
             </div>
             

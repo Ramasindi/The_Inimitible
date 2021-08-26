@@ -140,80 +140,65 @@ $("#signUpNewUser").click(function () {
     var email = $("#NewEmail").val();
     var password = $("#NewPassword").val();
     var reEnterpassword = $("#ReEnterPassword").val();
-    if (password !== reEnterpassword) {
-        alert("Passwords do not match");
-        console.log("Password 1: " + password + " Password 2: " + reEnterpassword);
-    } else {
-        console.log("New user = " + email + " " + password);
-        CreateNewUser(email, password);
-    }
-
-    
+    CreateNewUser(email, password, reEnterpassword);
 });
 //Button for signing/login existing user
-//button listerners
 $("#signInUser").click(function () {
     var email = $("#email").val();
     var password = $("#password").val();
-    console.log("Existing user =" + email + " " + password);
-    SignIn(email, password);
-   
+    SignIn(email, password); 
 });
 //On Register
 $("#googleSignIn").click(function () {
-    console.log("Google Sign in");
-    SignUserWithGoogle();
-    
-
+   SignUserWithGoogle();
 });
 $("#facebooksignin").click(function () {
-    console.log("Facebook sign in");
     signWithFB();
-
 });
 //On Login
 $("#googleLogin").click(function () {
-    console.log("Google Sign in");
     SignUserWithGoogle();
-    
 });
 $("#facebooklogin").click(function () {
-    console.log("Facebook login");
     signWithFB();
-
 });
 //log user out
 $("#logout").click(function () {
     SignOut()
-    console.log("logged out");
-
 });
 
 //Functions with Firebase
 //This function is for creating/Registering new users
-function CreateNewUser(email, password) {
+function CreateNewUser(email, password, reEnterpassword) {
+    if (password !== reEnterpassword) {
+        document.getElementById("registerAlert").innerHTML = "<strong>Error!</strong> 'Your Passwords do not match'";
+        return;
+    }
   firebase.default.auth().createUserWithEmailAndPassword(email, password)
     .then(function (result){
         window.location = "Home.aspx";
     }).catch(function (error) {
-        // Handle Errors here.
-        var errorCode = error.code;
+        // Handle Errors here
         var errorMessage = error.message;
-        console.log(errorMessage);
-        alert(errorMessage);
+        if(errorMessage != null || errorCode != null) {
+            document.getElementById("registerAlert").innerHTML = "<strong>Error!</strong> '" + errorMessage + "'";
+            return;
+        }
+        
     });
 }
 //This function is for signing in existing users
-function SignIn(email, password) {
+function SignIn(email, password) { 
     firebase.auth().signInWithEmailAndPassword(email, password)
-        .then(function (result) {
-            location.replace("Home.aspx");
-        }).catch(function (error) {
+        .then((result) => {
+            window.location.href = "Home.aspx";
+        }).catch((error) => {
         // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(errorMessage);
-        alert(errorMessage);
+            var errorMessage = error.message;
+            while (errorMessage != null || errorCode != null) {
+                document.getElementById("loginAlert").innerHTML = "<strong>Error!</strong> '" + errorMessage + "'";
+               return;
+            }
     });
 }
 //Sign in user with google account popup
@@ -280,12 +265,13 @@ function signWithFB()
         });
 }
 //IF there is an active user
+
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/firebase.User
         var uid = user.uid;
-        // ...
+        //
         currentUser = user;
 
         if (currentUser.displayName !== null) {
@@ -293,21 +279,29 @@ firebase.auth().onAuthStateChanged((user) => {
         } else {
             document.getElementById("myAccount").innerHTML = user.email;
         }
+        console.log(currentUser);
+        document.getElementById("registerMyAcc").style.display = "none";
+        document.getElementById("loginMyAcc").style.display = "none";
+        document.getElementById("loginDivMyAcc").style.display = "none";
+        document.getElementById("logoutDivMyAcc").style.display = "none";
     } else {
-        // User is signed out
-        // ...
+        // User is signed out, remove logout under my account dropdown
+        document.getElementById("logoutMyAcc").style.display = "none";
+        document.getElementById("profileMyAcc").style.display = "none";
+        document.getElementById("profileDivMyAcc").style.display = "none";
+        console.log("No User");
     }
 });
 
 
 //logging user out
 function SignOut() {
-    firebase.auth().signOut();//.then(function() {
+    firebase.auth().signOut().then(function() {
 
     // Sign-out successful.
-    //console.log("User has signed out");
-    //}).catch(function(error) {
+        console.log("User has signed out");
+   }).catch(function(error) {
     // An error happened.
-    //console.log("An error occured signing user out");
-    //});
+    console.log("An error occured signing user out");
+    });
 }

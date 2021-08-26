@@ -78,11 +78,14 @@
                         <a class="nav-link dropdown-toggle" id="myAccount" data-bs-toggle="dropdown" aria-expanded="false" href="#">My Account</a>
                         
                         <ul class="dropdown-menu" aria-labelledby="myAccount">
-                            <li><a class="dropdown-item" href="Register.aspx">Register your Account</a></li>
-                            <li><div class="dropdown-divider"></div></li>
-                            <li><a class="dropdown-item" href="Login.aspx">Login</a></li>
-                            <li><div class="dropdown-divider"></div></li>
-                            <li><a class="dropdown-item" id="logout" href="Home.aspx">Logout</a></li>
+                            <li id="registerMyAcc"><a class="dropdown-item" href="Register.aspx">Register your Account</a></li>
+                            <li id="loginDivMyAcc"><div class="dropdown-divider"></div></li>
+                            <li id="loginMyAcc"><a class="dropdown-item" href="Login.aspx">Login</a></li>
+
+                            <li id="logoutDivMyAcc"><div class="dropdown-divider"></div></li>
+                            <li id="profileMyAcc"><a class="dropdown-item" href="Home.aspx">Profile</a></li>
+                            <li id="profileDivMyAcc"><div class="dropdown-divider"></div></li>
+                            <li id="logoutMyAcc"><a class="dropdown-item" href="Home.aspx" id="logout">Logout</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
