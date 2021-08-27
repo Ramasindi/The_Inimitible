@@ -50,7 +50,6 @@ C:\Users\Thalukanyo\workspace\Web Development Tools\testSite\ProjectTest\Project
 C:\Users\Thalukanyo\workspace\Web Development Tools\testSite\ProjectTest\ProjectTest\bin\roslyn\vbc.rsp
 C:\Users\Thalukanyo\workspace\Web Development Tools\testSite\ProjectTest\ProjectTest\bin\roslyn\VBCSCompiler.exe
 C:\Users\Thalukanyo\workspace\Web Development Tools\testSite\ProjectTest\ProjectTest\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Thalukanyo\workspace\Web Development Tools\testSite\ProjectTest\ProjectTest\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Thalukanyo\workspace\Web Development Tools\testSite\ProjectTest\ProjectTest\obj\Debug\ProjectTest.csproj.AssemblyReference.cache
 C:\Users\Thalukanyo\workspace\Web Development Tools\testSite\ProjectTest\ProjectTest\obj\Debug\ProjectTest.csproj.CoreCompileInputs.cache
 C:\Users\Thalukanyo\workspace\Web Development Tools\testSite\ProjectTest\ProjectTest\obj\Debug\ProjectTest.csproj.CopyComplete

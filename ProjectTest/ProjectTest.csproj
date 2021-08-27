@@ -134,12 +134,10 @@
     <Content Include="js\script.js" />
     <Content Include="js\swiper.min.js" />
     <Content Include="Login.aspx" />
-    <Content Include="login.html" />
     <Content Include="obj\Debug\ProjectTest.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\ProjectTest.dll" />
     <Content Include="obj\Debug\ProjectTest.pdb" />
     <Content Include="Register.aspx" />
-    <Content Include="register.html" />
     <Content Include="template\nozama-lite.1.4.5\nozama-lite\assets\vendor\alpha-color-picker\alpha-color-picker.css" />
     <Content Include="template\nozama-lite.1.4.5\nozama-lite\assets\vendor\alpha-color-picker\alpha-color-picker.js" />
     <Content Include="template\nozama-lite.1.4.5\nozama-lite\assets\vendor\alpha-color-picker\transparency-grid.png" />
