@@ -297,7 +297,7 @@ firebase.auth().onAuthStateChanged((user) => {
 //logging user out
 function SignOut() {
     firebase.auth().signOut().then(function() {
-
+        window.location = "Home.aspx";
     // Sign-out successful.
         window.location = "Home.aspx";
         console.log("User has signed out");
