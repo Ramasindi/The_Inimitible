@@ -163,7 +163,7 @@ $("#facebooklogin").click(function () {
     signWithFB();
 });
 //log user out
-$("#logout").click(function () {
+$("#logout").click(function () {//sign0ut() out
     SignOut()
 });
 
@@ -299,6 +299,7 @@ function SignOut() {
     firebase.auth().signOut().then(function() {
 
     // Sign-out successful.
+        window.location = "Home.aspx";
         console.log("User has signed out");
    }).catch(function(error) {
     // An error happened.
