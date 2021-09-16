@@ -11,7 +11,12 @@ namespace ProjectTest
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["CurrentUser"] = (string)HttpContext.Current.Session["UserID"];
 
+            if (!string.IsNullOrEmpty(Session["CurrentUser"] as string))
+            {
+                Response.Redirect("Profile.aspx");
+            }
         }
     }
 }

@@ -43,7 +43,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FireSharp, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FireSharp.1.1.0\lib\net45\FireSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="FireSharp.Serialization.JsonNet, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FireSharp.Serialization.JsonNet.1.1.0\lib\net45\FireSharp.Serialization.JsonNet.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=104.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.104.4.0\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -131,6 +143,7 @@
     <Content Include="js\aos.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\config.js" />
+    <Content Include="js\Firebase.js" />
     <Content Include="js\purecounter.min.js" />
     <Content Include="js\script.js" />
     <Content Include="js\swiper.min.js" />
@@ -138,6 +151,7 @@
     <Content Include="obj\Debug\ProjectTest.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\ProjectTest.dll" />
     <Content Include="obj\Debug\ProjectTest.pdb" />
+    <Content Include="Profile.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Web.config" />
     <Content Include="webfonts\fa-brands-400.svg" />
@@ -159,6 +173,9 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MailHandler.ashx.cs">
+      <DependentUpon>MailHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="MasterLayout.Master.cs">
       <DependentUpon>MasterLayout.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -167,6 +184,13 @@
       <DependentUpon>MasterLayout.Master</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
@@ -175,6 +199,7 @@
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UserInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterLayout.Master" />
@@ -193,6 +218,7 @@
     <Content Include="obj\Debug\ProjectTest.csproj.AssemblyReference.cache" />
     <Content Include="obj\Debug\ProjectTest.csproj.CopyComplete" />
     <Content Include="obj\Debug\ProjectTest.csproj.CoreCompileInputs.cache" />
+    <Content Include="MailHandler.ashx" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

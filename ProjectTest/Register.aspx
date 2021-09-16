@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+   <form id="form1" runat="server">
     <!-- Header -->
     <header class="ex-header">
         <div class="container">
@@ -34,15 +35,21 @@
                                   
                              </div>
                             <div class="form-group py-2">
-                                <button style="color: black;" id="signUpNewUser" class="btn btn-primary form-control"><b>Sign up</b></button>
+                                <button style="color: black;" id="signUpNewUser" class="btn btn-primary form-control"><b>Sign up</b>
+                                    &nbsp &nbsp<span id="signUpSpinner" class="spinner-border spinner-border-sm" style="display:none"></span>
+                                </button>
                             </div>
                         <p><b>OR</b></p>
                         <div class="form-group py-2">
-                            <button style="color: orangered;" id="googleSignIn" class="btn btn-primary form-control"><b>Google Sign in</b></button>
+                            <button style="color: orangered;" id="googleSignIn" class="btn btn-primary form-control"><b>Google Sign up</b>
+                                &nbsp &nbsp<span id="googleSignSpinner" class="spinner-border spinner-border-sm" style="display:none"></span>
+                            </button>
                         </div>
                         <p><b>OR</b></p>
                         <div class="form-group py-2">
-                            <button style="color: midnightblue;" id="facebooksignin" class="btn btn-primary form-control"><b>Facebook Login</b></button>
+                            <button style="color: midnightblue;" id="facebooksignin" class="btn btn-primary form-control"><b>Facebook Sign up</b>
+                                &nbsp &nbsp<span id="facebookSignSpinner" class="spinner-border spinner-border-sm" style="display:none"></span>
+                            </button>
                         </div>
                         
                     </div>
@@ -67,4 +74,5 @@
         <img src="assets/images/up-arrow.png" alt="alternative">
     </button>
     <!-- end of back to top button -->
+         </form>
 </asp:Content>
