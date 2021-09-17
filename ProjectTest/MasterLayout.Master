@@ -31,8 +31,10 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-storage.js"></script>
     <script src="./js/config.js"></script>
     <!-- End Firebase-->
+
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="./css/bootstrap.min.css" rel="stylesheet">
@@ -70,27 +72,27 @@
                         <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#services">Services</a>
+                        <a class="nav-link" href="Services.aspx">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#plans">Plans</a>
+                        <a class="nav-link" href="Plans.aspx">Plans</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="myAccount" data-bs-toggle="dropdown" aria-expanded="false" href="#">My Account</a>
                         
                         <ul class="dropdown-menu" aria-labelledby="myAccount">
-                            <li id="registerMyAcc"><a class="dropdown-item" href="Register.aspx">Register your Account</a></li>
-                            <li id="loginDivMyAcc"><div class="dropdown-divider"></div></li>
-                            <li id="loginMyAcc"><a class="dropdown-item" href="Login.aspx">Login</a></li>
+                            <li id="registerMyAcc" runat="server"><a class="dropdown-item" href="Register.aspx">Register your Account</a></li>
+                            <li id="loginDivMyAcc" runat="server"><div class="dropdown-divider"></div></li>
+                            <li id="loginMyAcc" runat="server"><a class="dropdown-item" href="Login.aspx">Login</a></li>
 
-                            <li id="logoutDivMyAcc"><div class="dropdown-divider"></div></li>
-                            <li id="profileMyAcc"><a class="dropdown-item" href="Profile.aspx">Profile</a></li>
-                            <li id="profileDivMyAcc"><div class="dropdown-divider"></div></li>
-                            <li id="logoutMyAcc"><a class="dropdown-item" id="logout">Logout</a></li>
+                            <li id="logoutDivMyAcc" runat="server"><div class="dropdown-divider"></div></li>
+                            <li id="profileMyAcc" runat="server"><a class="dropdown-item" href="Profile.aspx">Profile</a></li>
+                            <li id="profileDivMyAcc" runat="server"><div class="dropdown-divider"></div></li>
+                            <li id="logoutMyAcc" runat="server"><a class="dropdown-item" id="logout">Logout</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                        <a class="nav-link" href="Contact.aspx">Contact</a>
                     </li>
                 </ul>
                 <span class="nav-item social-icons">

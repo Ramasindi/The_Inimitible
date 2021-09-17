@@ -45,7 +45,7 @@ namespace ProjectTest
                     if (Session["CurrentUserRole"].ToString() == "STUDENT")
                     {
                         User = client.Get("Students/" + Session["CurrentUser"].ToString());
-                        if (User.Body != null)
+                        if (!string.IsNullOrEmpty(User.Body))
                         {
                             UserInfo user = User.ResultAs<UserInfo>();
                             userEmail.Value = Session["CurrentUserEmail"].ToString();
@@ -80,7 +80,7 @@ namespace ProjectTest
                     else if (Session["CurrentUserRole"].ToString() == "TUTOR  ")
                     {
                         User = client.Get("Tutors/" + Session["CurrentUser"].ToString());
-                        if (User.Body != null)
+                        if (!string.IsNullOrEmpty(User.Body))
                         {
                             UserInfo user = User.ResultAs<UserInfo>();
                             userEmail.Value = Session["CurrentUserEmail"].ToString();
@@ -114,7 +114,7 @@ namespace ProjectTest
                     else if (Session["CurrentUserRole"].ToString() == "ADMIN  ")
                     {
                         User = client.Get("Administrators/" + Session["CurrentUser"].ToString());
-                        if (User.Body != null)
+                        if (!string.IsNullOrEmpty(User.Body))
                         {
                             UserInfo user = User.ResultAs<UserInfo>();
                             userEmail.Value = Session["CurrentUserEmail"].ToString();
@@ -159,7 +159,7 @@ namespace ProjectTest
         protected void UpdateProfile_Click(object sender, EventArgs e)
         {
 
-            status.InnerHtml = "<div class='alert alert-success'><strong> Success! </strong >" /*+ UpdateUser()*/ + "</a>.</div>";
+            status.InnerHtml = "<div class='alert alert-success'><strong> Success! </strong >" + UpdateUser() + "</a>.</div>";
         }
 
         private string UpdateUser()
@@ -171,7 +171,7 @@ namespace ProjectTest
                 surname = userSurname.Value,
                 gender = userGender.Value,
                 contact = contact.Value.ToString(),
-                dob = DateTime.Parse(userdob.Value),
+                dob = Convert.ToDateTime(userdob.Value),
                 grade = userGrade.Value.ToString(),
                 schoolname = schoolname.Value,
                 email = loggedEmail,

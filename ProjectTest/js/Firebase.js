@@ -4,6 +4,11 @@
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
+
+//Storage reference
+var storageRef = firebase.storage().ref();
+var imagesRef = storageRef.child('images');
+
 var database = firebase.database();
 var currentUser = {};
 var provider = new firebase.auth.GoogleAuthProvider();
@@ -333,4 +338,25 @@ function sendCurrentUser(UID, page, ROLE, EMAIL) {
         alert(e);
     }
 
+}
+
+//Forgot password
+$("#resetEmail").on("click", function (e) {
+    e.preventDefault();
+    var email = $("#resetemail").val();
+    document.getElementById("resetSpinner").style.display = "inline-block";
+    resetPassword(email);
+});
+
+function resetPassword(resetEmail) {
+    firebase.auth().sendPasswordResetEmail(resetEmail).then(function (response) {
+        // Email sent.
+        document.getElementById("ResetAlert").innerHTML = "<strong>Info!</strong> A reset password link has been sent to <b>" +resetEmail+"</b>";
+        document.getElementById("resetSpinner").style.display = "none";
+    }).catch(function (error) {
+        // An error happened.
+        var errorMessage = error.message;
+        document.getElementById("ResetAlert").innerHTML = "<strong>Error!</strong> '" + errorMessage + "'";
+        document.getElementById("resetSpinner").style.display = "none";
+    });
 }
