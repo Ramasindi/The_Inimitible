@@ -168,42 +168,6 @@ namespace ProjectTest
         protected global::System.Web.UI.HtmlControls.HtmlTextArea aboutArea;
 
         /// <summary>
-        /// idFile control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputFile idFile;
-
-        /// <summary>
-        /// matric control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputFile matric;
-
-        /// <summary>
-        /// transcript control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputFile transcript;
-
-        /// <summary>
-        /// other control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputFile other;
-
-        /// <summary>
         /// status control.
         /// </summary>
         /// <remarks>

@@ -153,7 +153,7 @@
                                 </div>
                             </div>
 
-                            <div class="tab">
+                            <%--<div class="tab">
                                 <h3>Documents</h3>
                                 <div class="form-group py-2 input-group-sm">
                                     <p>You can upload one document per category. Documents must be smaller than 10mb. The following extesions
@@ -180,7 +180,7 @@
                                     <br />
                                     <input type="file" id="other" name="filename" runat="server"/>
                                 </div>
-                            </div>
+                            </div>--%>
 
                             <div style="overflow:auto;">
                                 <div style="float:right;">

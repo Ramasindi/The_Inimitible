@@ -24,9 +24,6 @@ namespace ProjectTest
         public string province { get; set; }
         public string onlineSession { get; set; }
         public string inPersonSession { get; set; }
-        public string subject { get; set; }
-        public string mark { get; set; }
-        public string highestLevel { get; set; }
         public string about { get; set; }
         public string matricCert { get; set; }
         public string idDocument { get; set; }
