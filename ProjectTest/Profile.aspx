@@ -66,7 +66,7 @@
                             </div>
                             <div id="status" runat="server">
 
-                        </div>
+                            </div>
                            
                             <asp:Button  style="color: black; float: left" class="btn btn-primary mt-3" runat="server" Text="Update Details" ID="UpdateProfile" OnClick="UpdateProfile_Click" />                           
                         </div>
