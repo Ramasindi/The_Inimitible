@@ -11,133 +11,115 @@ namespace ProjectTest
 {
 
 
-    public partial class Home
+    public partial class AboutPlan
     {
 
         /// <summary>
-        /// head control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// liveSession control.
+        /// planName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liveSession;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl planName;
 
         /// <summary>
-        /// registerMyAcc control.
+        /// planDes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl registerMyAcc;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl planDes;
 
         /// <summary>
-        /// loginDivMyAcc control.
+        /// packItem1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl loginDivMyAcc;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl packItem1;
 
         /// <summary>
-        /// loginMyAcc control.
+        /// packItem2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl loginMyAcc;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl packItem2;
 
         /// <summary>
-        /// logoutDivMyAcc control.
+        /// packItem3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl logoutDivMyAcc;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl packItem3;
 
         /// <summary>
-        /// profileMyAcc control.
+        /// packItem4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl profileMyAcc;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl packItem4;
 
         /// <summary>
-        /// profileDivMyAcc control.
+        /// planPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl profileDivMyAcc;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl planPrice;
 
         /// <summary>
-        /// logoutMyAcc control.
+        /// AddToCart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl logoutMyAcc;
+        protected global::System.Web.UI.WebControls.Button AddToCart;
 
         /// <summary>
-        /// CartInfo control.
+        /// planImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CartInfo;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl planImage;
 
         /// <summary>
-        /// cartlabel control.
+        /// cartplan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor cartlabel;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl cartplan;
 
         /// <summary>
-        /// subu control.
+        /// subscription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl subu;
-
-        /// <summary>
-        /// cartItems control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl cartItems;
-
-        /// <summary>
-        /// ContentPlaceHolder1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl subscription;
     }
 }

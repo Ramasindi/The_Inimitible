@@ -45,7 +45,7 @@ namespace ProjectTest
                     if (Session["CurrentUserRole"].ToString() == "STUDENT")
                     {
                         User = client.Get("Students/" + Session["CurrentUser"].ToString());
-                        if (!string.IsNullOrEmpty(User.Body))
+                        if (User.Body != null)
                         {
                             UserInfo user = User.ResultAs<UserInfo>();
                             userEmail.Value = Session["CurrentUserEmail"].ToString();
@@ -80,7 +80,7 @@ namespace ProjectTest
                     else if (Session["CurrentUserRole"].ToString() == "TUTOR  ")
                     {
                         User = client.Get("Tutors/" + Session["CurrentUser"].ToString());
-                        if (!string.IsNullOrEmpty(User.Body))
+                        if (User.Body != null)
                         {
                             UserInfo user = User.ResultAs<UserInfo>();
                             userEmail.Value = Session["CurrentUserEmail"].ToString();
@@ -114,7 +114,7 @@ namespace ProjectTest
                     else if (Session["CurrentUserRole"].ToString() == "ADMIN  ")
                     {
                         User = client.Get("Administrators/" + Session["CurrentUser"].ToString());
-                        if (!string.IsNullOrEmpty(User.Body))
+                        if (User.Body != null)
                         {
                             UserInfo user = User.ResultAs<UserInfo>();
                             userEmail.Value = Session["CurrentUserEmail"].ToString();

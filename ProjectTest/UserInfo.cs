@@ -17,5 +17,6 @@ namespace ProjectTest
         public string gender { get; set; }
         public string schoolname { get; set; }
         public string grade { get; set; }
+        public string plan { get; set; }
     }
 }

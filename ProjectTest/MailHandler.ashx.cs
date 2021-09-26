@@ -27,6 +27,7 @@ namespace ProjectTest
                     {
                         context.Session["UserID"] = "";
                         context.Session["UserRole"] = "";
+                        context.Session.Abandon();
                         response.StatusCode = 200;
                     }
                     else { 

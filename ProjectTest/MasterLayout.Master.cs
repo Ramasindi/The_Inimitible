@@ -3,16 +3,87 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
+using FireSharp.Config;
+using FireSharp.Interfaces;
+using FireSharp.Response;
+using Newtonsoft.Json;
 namespace ProjectTest
 {
     public partial class Home : System.Web.UI.MasterPage
     {
-        protected void Page_Load(object sender, EventArgs e)
+        IFirebaseConfig config = new FirebaseConfig
         {
-            
-        }
+            AuthSecret = "t14CXupG4aZrZpq3ZzPPeq6Dbk4Nj9sZX0zrrO69",
+            BasePath = "https://mind-academy-8357a-default-rtdb.firebaseio.com/"
+        };
+        //Client
+        IFirebaseClient client;
+        protected void Page_Load(object sender, EventArgs e)
+        {   //configuring client with the project credentials
+            client = new FireSharp.FirebaseClient(config);
+            Session["CurrentUserRole"] = (string)HttpContext.Current.Session["UserRole"];
+            Session["CurrentUser"] = (string)HttpContext.Current.Session["UserID"];
+            liveSession.Visible = false;
+            if (string.IsNullOrEmpty(Session["CurrentUser"] as string))
+            {
+                CartInfo.Visible = false;
+                registerMyAcc.Visible = true;
+                loginMyAcc.Visible = true;
+                loginDivMyAcc.Visible = true;
+                logoutMyAcc.Visible = false;
+                logoutDivMyAcc.Visible = false;
+                profileMyAcc.Visible = false;
+                profileDivMyAcc.Visible = false;
+            }
+            else
+            {
+                registerMyAcc.Visible = false;
+                loginMyAcc.Visible = false;
+                loginDivMyAcc.Visible = false;
+                logoutDivMyAcc.Visible = false;
 
+                FirebaseResponse sub =  client.Get("Subscriptions/" + Session["CurrentUser"].ToString());
+                if (sub.Body != "null")
+                {
+                    //HtmlGenericControl cartItems = Master.FindControl("cartItems") as HtmlGenericControl;
+                    //HtmlGenericControl cartlabel = Master.FindControl("sub") as HtmlGenericControl;
+
+                    Subscription existingSub = sub.ResultAs<Subscription>();
+                    if (existingSub.endDate >= DateTime.Today)
+                    {
+                        cartItems.Visible = false;
+                        subu.InnerText = existingSub.plan;
+                        liveSession.Visible = true;
+                    }
+                    else
+                    {
+                        //UPDATE STATUS TO INACTIVE
+                        sub = client.Set("Subscriptions/" + Session["CurrentUser"].ToString() + "/status", "InActive");
+                        cartItems.Visible = false;
+                        subu.InnerText = "InActive";
+                    }
+                }
+                else
+                {
+                    FirebaseResponse cart = client.Get("Carts/" + Session["CurrentUser"].ToString());
+                    if (cart.Body != "null")
+                    {
+                        cartItems.InnerText = "1";
+                    }
+                    else
+                    {
+                        cartItems.InnerText = "0";
+                    }
+                }
+                if (Session["CurrentUserRole"] as string == "TUTOR  ")
+                {
+                    CartInfo.Visible = false;
+                }
+               // CartInfo.Visible = true;
+            }
+        }
     }
  }

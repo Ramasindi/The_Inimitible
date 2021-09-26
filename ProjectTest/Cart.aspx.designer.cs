@@ -11,133 +11,142 @@ namespace ProjectTest
 {
 
 
-    public partial class Home
+    public partial class Cart
     {
 
         /// <summary>
-        /// head control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// liveSession control.
+        /// emptyCart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liveSession;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl emptyCart;
 
         /// <summary>
-        /// registerMyAcc control.
+        /// Remove control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl registerMyAcc;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Remove;
 
         /// <summary>
-        /// loginDivMyAcc control.
+        /// name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl loginDivMyAcc;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl name;
 
         /// <summary>
-        /// loginMyAcc control.
+        /// priceForPlan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl loginMyAcc;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl priceForPlan;
 
         /// <summary>
-        /// logoutDivMyAcc control.
+        /// packageItem1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl logoutDivMyAcc;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl packageItem1;
 
         /// <summary>
-        /// profileMyAcc control.
+        /// packageItem2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl profileMyAcc;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl packageItem2;
 
         /// <summary>
-        /// profileDivMyAcc control.
+        /// packageItem3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl profileDivMyAcc;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl packageItem3;
 
         /// <summary>
-        /// logoutMyAcc control.
+        /// packageItem4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl logoutMyAcc;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl packageItem4;
 
         /// <summary>
-        /// CartInfo control.
+        /// LinkButton1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CartInfo;
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
 
         /// <summary>
-        /// cartlabel control.
+        /// items control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor cartlabel;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl items;
 
         /// <summary>
-        /// subu control.
+        /// price control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl subu;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl price;
 
         /// <summary>
-        /// cartItems control.
+        /// Checkout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl cartItems;
+        protected global::System.Web.UI.WebControls.Button Checkout;
 
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// cartplan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl cartplan;
+
+        /// <summary>
+        /// subscriptionValid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl subscriptionValid;
     }
 }

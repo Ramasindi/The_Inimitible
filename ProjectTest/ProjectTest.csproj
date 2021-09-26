@@ -79,6 +79,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AboutPlan.aspx" />
     <Content Include="assets\images\about.jpg" />
     <Content Include="assets\images\article-details-large.jpg" />
     <Content Include="assets\images\article-details-small.jpg" />
@@ -134,6 +135,7 @@
     <Content Include="bin\roslyn\System.Xml.XPath.XDocument.dll" />
     <Content Include="bin\roslyn\vbc.exe" />
     <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="Cart.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="css\aos.min.css" />
     <Content Include="css\bootstrap.min.css" />
@@ -149,6 +151,8 @@
     <Content Include="js\purecounter.min.js" />
     <Content Include="js\script.js" />
     <Content Include="js\swiper.min.js" />
+    <Content Include="js\videochat.js" />
+    <Content Include="LiveSession.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="obj\Debug\ProjectTest.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\ProjectTest.dll" />
@@ -157,12 +161,27 @@
     <Content Include="Profile.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Services.aspx" />
+    <Content Include="TutorEvaluation.aspx" />
     <Content Include="Web.config" />
     <Content Include="webfonts\fa-brands-400.svg" />
     <Content Include="webfonts\fa-regular-400.svg" />
     <Content Include="webfonts\fa-solid-900.svg" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutPlan.aspx.cs">
+      <DependentUpon>AboutPlan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AboutPlan.aspx.designer.cs">
+      <DependentUpon>AboutPlan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -184,6 +203,13 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="LiveSession.aspx.cs">
+      <DependentUpon>LiveSession.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LiveSession.aspx.designer.cs">
+      <DependentUpon>LiveSession.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -202,6 +228,7 @@
       <DependentUpon>MasterLayout.Master</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="PlanDetail.cs" />
     <Compile Include="Plans.aspx.cs">
       <DependentUpon>Plans.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -230,6 +257,15 @@
     </Compile>
     <Compile Include="Services.aspx.designer.cs">
       <DependentUpon>Services.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shoppingcart.cs" />
+    <Compile Include="Subscription.cs" />
+    <Compile Include="TutorEvaluation.aspx.cs">
+      <DependentUpon>TutorEvaluation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TutorEvaluation.aspx.designer.cs">
+      <DependentUpon>TutorEvaluation.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserInfo.cs" />
   </ItemGroup>

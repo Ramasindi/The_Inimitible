@@ -20,7 +20,7 @@
                 <p>24/7 Support</p>  
             </div>
             <div class="my-3">
-                <a class="btn" href="#plans">View Subscription Plans</a>
+                <a class="btn" href="Plans.aspx">View Subscription Plans</a>
             </div>
         </div> <!-- end of container -->
     </section> <!-- end of home -->
@@ -61,7 +61,7 @@
                     <p class="py-2 para-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non sed accusantium aut dolores inventore architecto modi cupiditate eligendi corporis, illum illo culpa. Reiciendis, molestias. Illum voluptatum quisquam ad veritatis dolorem.</p>
 
                     <div class="my-3">
-                        <a class="btn" href="#your-link">Learn More</a>
+                        <a class="btn" href="Plans.aspx">Learn More</a>
                     </div>
                 </div>
                 <div class="col-lg-5 text-center py-4 py-sm-0" data-aos="fade-down"> 
