@@ -232,5 +232,24 @@ document.getElementById("aboutArea").addEventListener('input', function (e) {
 
     document.getElementById("the-count").innerHTML = `${currentLength}/${maxLength}`;
 });
+
+//Modal
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("UpdateProfile");
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function () {
+    modal.style.display = "block";
+}
+
+span.onclick = function () {
+    modal.style.display = "none";
+}
+
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 /**Tutor Form End *****************************************************************/
 

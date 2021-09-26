@@ -78,7 +78,7 @@ namespace ProjectTest
                     }
                     else if (Session["CurrentUserRole"].ToString() == "TUTOR  ")
                     {
-                        Response.Redirect("TutorProfile.aspx");
+                        Response.Redirect("TutorRegister.aspx");
                     }
                     else if (Session["CurrentUserRole"].ToString() == "ADMIN  ")
                     {

@@ -29,6 +29,7 @@ namespace ProjectTest
         public string idDocument { get; set; }
         public string transcipt { get; set; }
         public string supportDoc { get; set; }
+        public string communication { get; set; }
     }
 
 }
