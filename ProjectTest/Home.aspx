@@ -56,16 +56,17 @@
             <div class="row d-flex align-items-center">
                 <div class="col-lg-7" data-aos="fade-right">
                     <p>ABOUT US</p>
-                    <h1>We are top internet <br> service company</h1>
-                    <p class="py-2 para-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non sed accusantium aut dolores inventore architecto modi cupiditate eligendi corporis, illum illo culpa. Reiciendis, molestias. Illum voluptatum quisquam ad veritatis dolorem.</p>
-                    <p class="py-2 para-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non sed accusantium aut dolores inventore architecto modi cupiditate eligendi corporis, illum illo culpa. Reiciendis, molestias. Illum voluptatum quisquam ad veritatis dolorem.</p>
+                    <h2 >We are a top, affordable tutoring platform for both<br>  basic and higher education</h2>
+                    <p class="py-2 para-light">Mind Academy offers extra classes without any restrictions. We offer practise exercises, directional videos and custom made learning dashboard to empower both learners and students to learn at their own pace, anywhere it suits them.</p>
+                    <p class="py-2 para-light">Centre of attention being skill mastery to come to the aid of learners to form strong foundations. Only the sky is the limit!</p>
 
                     <div class="my-3">
                         <a class="btn" href="#your-link">Learn More</a>
                     </div>
                 </div>
                 <div class="col-lg-5 text-center py-4 py-sm-0" data-aos="fade-down"> 
-                    <img class="img-fluid" src="./assets/images/about.jpg" alt="about" >
+                    <img class="img-fluid" src="./assets/images/imagess.jpg" alt="about" >
+                    
                 </div>
             </div> <!-- end of row -->
         </div> <!-- end of container -->
@@ -76,33 +77,49 @@
     <section class="services d-flex align-items-center py-5" id="services">
         <div class="container text-light">
             <div class="text-center pb-4" >
-                <p>OUR SERVICES</p> 
-                <h2 class="py-2">Explore unlimited possibilities</h2>
-                <p class="para-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae asperiores, quia accusantium sunt corporis optio recusandae? Nostrum libero pariatur cumque, ipsa dolores voluptatibus voluptate alias sit fuga. Itaque, ea quo.</p>
+                <p class="service" id="service">OUR SERVICES</p> 
+                <h2 class="py-2" id="grades">Enhance your mind and improve your grades</h2>
             </div>
-            <div class="row gy-4 py-2" data-aos="zoom-in">
-                <div class="col-lg-4">
-                    <div class="card bg-transparent">
-                        <i class="fas fa-home fa-2x"></i>
-                        <h4 class="py-2">HOME BROADBAND</h4>
-                        <p class="para-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam odit consequatur doloribus natus in suscipit!</p>
-                    </div>
+
+                <div class="row gy-4 py-2" data-aos="zoom-in">
+              <div class="col-lg-4">
+                  <!--NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+                      BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB-->
+                       <a class="btn" href="PastPapers.aspx" ><div class="card bg-transparent">
+                       <img class="img-fluid d-none d-lg-block" src="./assets/images/pp.jpg" alt="no image">  
+
+                        <%--<i class="fas fa-home fa-2x"></i>--%>
+                        <h4 class="py-2">Past Papers</h4>
+                       
+                        <%--<a class="btn" href="PastPapers.aspx">Access all past papers and memorandums for any subject. Test yourself and see where you lacking.</a>--%>
+                       <p class="para-light">Access all past papers and memorandums for any subject. Test yourself and see where you lacking. </p>
+                    </div></a>
                 </div>
+            
+
+
                 <div class="col-lg-4">
-                    <div class="card bg-transparent">
-                        <i class="fas fa-wifi fa-2x"></i>
-                        <h4 class="py-2"> HOME WIFI</h4>
-                        <p class="para-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam odit consequatur doloribus natus in suscipit!</p>
-                    </div>                    
+                       <a class="btn" href="HomeworkHelper.aspx" > <div class="card bg-transparent">
+                         <img class="img-fluid d-none d-lg-block" src="./assets/images/do.jpg" alt="no image"> 
+                        <%--<i class="fas fa-wifi fa-2x"></i>--%>
+                        <h4 class="py-2"> Homework Helper</h4>
+                        <p class="para-light">Tutor at your disposal for any homework problem of any subject. Say goodbye to incomplete work.</p>
+                    </div>     </a>               
                 </div>
+
                 <div class="col-lg-4">
-                    <div class="card bg-transparent">
-                        <i class="fas fa-phone fa-2x"></i>
-                        <h4 class="py-2">HOME BROADBAND</h4>
-                        <p class="para-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam odit consequatur doloribus natus in suscipit!</p>
-                    </div>                    
+                       <a class="btn" href="MentorshipProgramme.aspx" > <div class="card bg-transparent">
+                         <img class="img-fluid d-none d-lg-block" src="./assets/images/l.jpg" alt="no image"> 
+                       <%-- <i class="fas fa-phone fa-2x"></i>--%>
+                        <h4 class="py-2">Mentorship Programme</h4>
+                        <p class="para-light">Feeling demotivated? Not knowing how to organise your daily tasks? The Mind Academy got you covered. Imagine having
+                            your own personal  mentor to guide you, organize your tasks, help you study smart, develop a daily routine and gives you reminders of the tasks you
+                            have to complete. 
+                        </p>
+                    </div></a>                  
                 </div>
-                <div class="col-lg-4">
+
+             <%--   <div class="col-lg-4">
                     <div class="card bg-transparent">
                         <i class="fas fa-mobile fa-2x"></i>
                         <h4 class="py-2">MOBILE CONNECTION</h4>
@@ -122,7 +139,8 @@
                         <h4 class="py-2">TV SETUP BOX</h4>
                         <p class="para-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam odit consequatur doloribus natus in suscipit!</p>
                     </div>                    
-                </div>
+                </div>--%>
+
             </div> <!-- end of row -->
         </div> <!-- end of container -->
     </section> <!-- end of services -->
@@ -456,7 +474,7 @@
                     <div class="p-2"><i class="far fa-envelope fa-3x"></i></div>
                     <div class="ms-2">
                         <h6>SEND US MESSAGE</h6>
-                        <p>infodemofile@example.com</p>
+                        <p>theinimitiblem@gmail.com</p>
                     </div>
                 </div>
                 <div class="col-lg-3 d-flex align-items-center" >
