@@ -78,7 +78,37 @@ namespace ProjectTest
                     }
                     else if (Session["CurrentUserRole"].ToString() == "TUTOR  ")
                     {
-                        Response.Redirect("TutorProfile.aspx");
+                        Response.Redirect("TutorRegister.aspx");
+                        if (!string.IsNullOrEmpty(User.Body))
+                        {
+                            UserInfo user = User.ResultAs<UserInfo>();
+                            userEmail.Value = Session["CurrentUserEmail"].ToString();
+                            loggedEmail = Session["CurrentUserEmail"].ToString();
+                            if (!string.IsNullOrEmpty(Session["CurrentUserRole"] as string))
+                            {
+                                if (user.firstname != null)
+                                    userFirstname.Value = user.firstname;
+                                //detailsDiv.Visible = false;
+                                if (user.surname != null)
+                                    userSurname.Value = user.surname;
+                                if (user.dob != null)
+                                    userdob.Attributes.Add("type", "text");
+                                userdob.Value = user.dob.ToString("d");
+                                if (user.gender != null)
+                                    userGender.Value = user.gender;
+                                if (user.grade != null)
+                                    userGrade.Value = user.grade.ToString();
+                                if (user.schoolname != null)
+                                    schoolname.Value = user.schoolname;
+                                if (user.contact != null)
+                                    contact.Value = user.contact.ToString();
+                            }
+
+                        }
+                        else
+                        {
+                            status.InnerHtml = "<div class='alert alert-success'><strong> Info! </strong > No Prifile Details FOUND!</a>.</div>";
+                        }
                     }
                     else if (Session["CurrentUserRole"].ToString() == "ADMIN  ")
                     {

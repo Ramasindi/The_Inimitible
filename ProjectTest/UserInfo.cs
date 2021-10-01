@@ -29,6 +29,19 @@ namespace ProjectTest
         public string idDocument { get; set; }
         public string transcipt { get; set; }
         public string supportDoc { get; set; }
+        public string communication { get; set; }
+        public string institution { get; set; }
+        public string addressLine { get; set; }
+        public string addressLine2 { get; set; }
+        public string city { get; set; }
+        public string province { get; set; }
+        public string onlineSession { get; set; }
+        public string inPersonSession { get; set; }
+        public string about { get; set; }
+        public string matricCert { get; set; }
+        public string idDocument { get; set; }
+        public string transcipt { get; set; }
+        public string supportDoc { get; set; }
         public string status { get; set; }
         public string picture { get; set; }
     }
