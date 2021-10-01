@@ -11,169 +11,223 @@ namespace ProjectTest
 {
 
 
-    public partial class Home
+    public partial class TutorProfile
     {
 
         /// <summary>
-        /// head control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// liveSession control.
+        /// Urole control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liveSession;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Urole;
 
         /// <summary>
-        /// registerMyAcc control.
+        /// userEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl registerMyAcc;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl userEmail;
 
         /// <summary>
-        /// loginDivMyAcc control.
+        /// userFirstname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl loginDivMyAcc;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText userFirstname;
 
         /// <summary>
-        /// loginMyAcc control.
+        /// userSurname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl loginMyAcc;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText userSurname;
 
         /// <summary>
-        /// logoutDivMyAcc control.
+        /// userdob control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl logoutDivMyAcc;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl userdob;
 
         /// <summary>
-        /// profileMyAcc control.
+        /// contact control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl profileMyAcc;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl contact;
 
         /// <summary>
-        /// tutProfileDiv control.
+        /// userGender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tutProfileDiv;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect userGender;
 
         /// <summary>
-        /// tutProfile control.
+        /// schoolname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tutProfile;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText schoolname;
 
         /// <summary>
-        /// tutEvalDiv control.
+        /// institution control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tutEvalDiv;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText institution;
 
         /// <summary>
-        /// tutEval control.
+        /// address1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tutEval;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText address1;
 
         /// <summary>
-        /// profileDivMyAcc control.
+        /// address2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl profileDivMyAcc;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText address2;
 
         /// <summary>
-        /// logoutMyAcc control.
+        /// city control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl logoutMyAcc;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText city;
 
         /// <summary>
-        /// CartInfo control.
+        /// province control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CartInfo;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText province;
 
         /// <summary>
-        /// cartlabel control.
+        /// online control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor cartlabel;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect online;
 
         /// <summary>
-        /// subu control.
+        /// inPerson control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl subu;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect inPerson;
 
         /// <summary>
-        /// cartItems control.
+        /// idFile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl cartItems;
+        protected global::System.Web.UI.HtmlControls.HtmlInputFile idFile;
 
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// matric control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputFile matric;
+
+        /// <summary>
+        /// picture control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputFile picture;
+
+        /// <summary>
+        /// transcript control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputFile transcript;
+
+        /// <summary>
+        /// other control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputFile other;
+
+        /// <summary>
+        /// aboutArea control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea aboutArea;
+
+        /// <summary>
+        /// UpdateProfile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button UpdateProfile;
+
+        /// <summary>
+        /// status control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl status;
     }
 }

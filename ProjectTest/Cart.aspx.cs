@@ -39,7 +39,7 @@ namespace ProjectTest
             string session = (string)Session["CurrentUserRole"];
             if (session == "TUTOR  ")
             {
-                Response.Redirect("Home.aspx");
+                Response.Redirect("TutorProfile.aspx");
             }
             
             else

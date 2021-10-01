@@ -37,6 +37,10 @@ namespace ProjectTest
                 logoutDivMyAcc.Visible = false;
                 profileMyAcc.Visible = false;
                 profileDivMyAcc.Visible = false;
+                tutProfileDiv.Visible = false;
+                tutProfile.Visible = false;
+                tutEvalDiv.Visible = false;
+                tutEval.Visible = false;
             }
             else
             {
@@ -80,7 +84,32 @@ namespace ProjectTest
                 }
                 if (Session["CurrentUserRole"] as string == "TUTOR  ")
                 {
-                    CartInfo.Visible = false;
+                    FirebaseResponse tut = client.Get("Tutors/" + Session["CurrentUser"].ToString());
+                    CartInfo.Visible = true;
+                    cartItems.Visible = false;
+                    if (tut.Body != "null")
+                    {
+                        UserInfo u = tut.ResultAs<UserInfo>();
+                        subu.InnerText = u.status;//check approval
+                    }
+                    else
+                    {
+                        subu.InnerText = "Pending";
+                    }
+                    
+                    
+                    liveSession.Visible = true;
+                    tutProfileDiv.Visible = false;
+                    tutProfile.Visible = false;
+                    tutEvalDiv.Visible = false;
+                    tutEval.Visible = false;
+                }
+                if (Session["CurrentUserRole"] as string == "STUDENT")
+                {
+                    tutProfileDiv.Visible = false;
+                    tutProfile.Visible = false;
+                    tutEvalDiv.Visible = false;
+                    tutEval.Visible = false;
                 }
                // CartInfo.Visible = true;
             }

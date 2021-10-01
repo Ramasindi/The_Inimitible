@@ -232,7 +232,7 @@
                 </div>
                 <div class="col-lg-6 d-flex align-items-center" data-aos="fade-down">
                     <div class="input-group my-3">
-                        <input type="text" class="form-control p-2" placeholder="Enter your email address" aria-label="Recipient's email">
+                        <input type="text" class="form-control p-4" placeholder="Enter your email address" aria-label="Recipient's email">
                         <button class="btn-secondary text-light" type="button">Subscribe</button>
                     </div>
                 </div>

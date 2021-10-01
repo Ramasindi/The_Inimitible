@@ -123,14 +123,14 @@
     </div>
   </div>
         <script type="text/javascript">
-            function sendReceipt(Email,Price,EndDate,Plan) {
+            function sendMail(Email,Price,EndDate,Plan) {
+                
                 var templateParams = {
                     price: Price,
                     endDate: EndDate,
                     plan: Plan,
                     email: Email,
                 };
-                console.log($("#myAccount").val());
                 emailjs.send('service_xj13z4x', 'template_jn2wybu', templateParams)
                 .then(function (response) {
                     console.log('SUCCESS!', response.status, response.text);

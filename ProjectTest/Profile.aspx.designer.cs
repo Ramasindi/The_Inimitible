@@ -96,6 +96,15 @@ namespace ProjectTest
         protected global::System.Web.UI.HtmlControls.HtmlSelect userGender;
 
         /// <summary>
+        /// schoolHide control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl schoolHide;
+
+        /// <summary>
         /// schoolname control.
         /// </summary>
         /// <remarks>
@@ -103,6 +112,15 @@ namespace ProjectTest
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText schoolname;
+
+        /// <summary>
+        /// usergradeHide control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl usergradeHide;
 
         /// <summary>
         /// userGrade control.

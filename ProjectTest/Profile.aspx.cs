@@ -29,8 +29,7 @@ namespace ProjectTest
             //configuring client with the project credentials
             client = new FireSharp.FirebaseClient(config);
             if (client != null)
-            {
-
+            {              
                 Session["CurrentUser"] = (string)HttpContext.Current.Session["UserID"];
                 if (string.IsNullOrEmpty(Session["CurrentUser"] as string))
                 {
@@ -79,40 +78,12 @@ namespace ProjectTest
                     }
                     else if (Session["CurrentUserRole"].ToString() == "TUTOR  ")
                     {
-                        User = client.Get("Tutors/" + Session["CurrentUser"].ToString());
-                        if (User.Body != null)
-                        {
-                            UserInfo user = User.ResultAs<UserInfo>();
-                            userEmail.Value = Session["CurrentUserEmail"].ToString();
-                            loggedEmail = Session["CurrentUserEmail"].ToString();
-                            if (!string.IsNullOrEmpty(Session["CurrentUserRole"] as string))
-                            {
-                                if (user.firstname != null)
-                                    userFirstname.Value = user.firstname;
-                                //detailsDiv.Visible = false;
-                                if (user.surname != null)
-                                    userSurname.Value = user.surname;
-                                if (user.dob != null)
-                                    userdob.Attributes.Add("type", "text");
-                                userdob.Value = user.dob.ToString("d");
-                                if (user.gender != null)
-                                    userGender.Value = user.gender;
-                                if (user.grade != null)
-                                    userGrade.Value = user.grade.ToString();
-                                if (user.schoolname != null)
-                                    schoolname.Value = user.schoolname;
-                                if (user.contact != null)
-                                    contact.Value = user.contact.ToString();
-                            }
-
-                        }
-                        else
-                        {
-                            status.InnerHtml = "<div class='alert alert-success'><strong> Info! </strong > No Prifile Details FOUND!</a>.</div>";
-                        }
+                        Response.Redirect("TutorProfile.aspx");
                     }
                     else if (Session["CurrentUserRole"].ToString() == "ADMIN  ")
                     {
+                        schoolHide.Visible = false;
+                        usergradeHide.Visible = false;
                         User = client.Get("Administrators/" + Session["CurrentUser"].ToString());
                         if (User.Body != null)
                         {
