@@ -1,6 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterLayout.Master" AutoEventWireup="true" CodeBehind="TutorProfile.aspx.cs" Inherits="ProjectTest.TutorProfile1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterLayout.Master" AutoEventWireup="true" CodeBehind="TutorProfile.aspx.cs" Inherits="ProjectTest.TutorProfile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
     <script src="https://use.fontawesome.com/5a0833811c.js"></script>
@@ -40,7 +39,6 @@
         }
         .profile-head h6{
             color: #1c262f;
-;
         }
         .profile-edit-btn{
             border: none;
@@ -257,12 +255,14 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <form id="form1" runat="server">
+<form id="form1" runat="server">
         <!-- Header -->
         <header class="ex-header">
             <div class="container">
                 <div class="row">
-                        
+                        <div class="col-xl-10 offset-xl-1">
+                        <h1>Tutor Profile</h1>
+                    </div>
                     <!-- end of col -->
                 </div>
                 <!-- end of row -->
@@ -326,11 +326,11 @@
                                 <span class="fa fa-star"></span>
                                 <span class="fa fa-star"></span>
                                 <p>TUTOR SKILLS</p>
-                                <a href="">Coffee Drinker</a><br/>
-                                <a href="">Fluent in English</a><br/>
-                                <a href="">Patient</a><br/>
-                                <a href="">Adapt to student</a><br/>
-                                <a href="">Friendly</a><br/>
+                                <a href="#">Coffee Drinker</a><br/>
+                                <a href="#">Fluent in English</a><br/>
+                                <a href="#">Patient</a><br/>
+                                <a href="#">Adapt to student</a><br/>
+                                <a href="#">Friendly</a><br/>
                             </div>
                         </div>
                         <div class="col-md-8">

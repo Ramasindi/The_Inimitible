@@ -11,7 +11,7 @@ namespace ProjectTest
 {
 
 
-    public partial class TutorProfile1
+    public partial class TutorProfile
     {
 
         /// <summary>

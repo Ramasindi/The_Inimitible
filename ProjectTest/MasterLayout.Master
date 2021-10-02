@@ -102,7 +102,7 @@
                         <a class="nav-link dropdown-toggle" id="myAccount" data-bs-toggle="dropdown" aria-expanded="false" href="#">My Account</a>
                         
                         <ul class="dropdown-menu" aria-labelledby="myAccount">
-                            <li id="registerMyAcc" runat="server"><a class="dropdown-item" href="Register.aspx">Register your Account</a></li>
+                            <li id="registerMyAcc" runat="server"><a class="dropdown-item" href="Register.aspx">Register</a></li>
                             <li id="loginDivMyAcc" runat="server"><div class="dropdown-divider"></div></li>
                             <li id="loginMyAcc" runat="server"><a class="dropdown-item" href="Login.aspx">Login</a></li>
 
@@ -110,7 +110,7 @@
                             <li id="profileMyAcc" runat="server"><a class="dropdown-item" href="Profile.aspx">Profile</a></li>
                            
                             <li id="tutProfileDiv" runat="server"><div class="dropdown-divider"></div></li>
-                            <li id="tutProfile" runat="server"><a class="dropdown-item" href="TutorProfile.aspx">Tutor Profile</a></li>
+                            <li id="tutProfile" runat="server"><a class="dropdown-item" href="TutorRegister.aspx">Tutor Registration</a></li>
                             
                             <li id="tutEvalDiv" runat="server"><div class="dropdown-divider"></div></li>
                             <li id="tutEval" runat="server"><a class="dropdown-item" href="TutorEvaluation.aspx">Tutor Evaluation</a></li>

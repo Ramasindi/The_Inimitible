@@ -40,114 +40,82 @@ namespace ProjectTest
                 Urole.InnerText = Session["CurrentUserRole"].ToString();
                 if (!string.IsNullOrEmpty(Session["CurrentUser"] as string))
                 {
-                    FirebaseResponse User;
-                    if (Session["CurrentUserRole"].ToString() == "STUDENT")
+                    if (!IsPostBack)
                     {
-                        User = client.Get("Students/" + Session["CurrentUser"].ToString());
-                        if (User.Body != null)
+                        FirebaseResponse User = null;
+                        if (Session["CurrentUserRole"].ToString() == "STUDENT")
                         {
-                            UserInfo user = User.ResultAs<UserInfo>();
-                            userEmail.Value = Session["CurrentUserEmail"].ToString();
-                            loggedEmail = Session["CurrentUserEmail"].ToString();
-                            if (!string.IsNullOrEmpty(Session["CurrentUserRole"] as string))
+                            User = client.Get("Students/" + Session["CurrentUser"].ToString());
+                            if (User.Body != "null")
                             {
-                                if (user.firstname != null)
-                                    userFirstname.Value = user.firstname;
-                                // detailsDiv.Visible = false;
-                                //TODO: IF USER HAVENT SET UP ACCOUNT DISPLAY A MESSAGE ALERTING
-                                if (user.surname != null)
-                                    userSurname.Value = user.surname;
-                                if (user.dob != null)
-                                    userdob.Attributes.Add("type", "text");
-                                userdob.Value = user.dob.ToString("d");
-                                if (user.gender != null)
-                                    userGender.Value = user.gender;
-                                if (user.grade != null)
-                                    userGrade.Value = user.grade.ToString();
-                                if (user.schoolname != null)
-                                    schoolname.Value = user.schoolname;
-                                if (user.contact != null)
-                                    contact.Value = user.contact.ToString();
-                            }
+                                UserInfo user = User.ResultAs<UserInfo>();
+                                userEmail.Value = Session["CurrentUserEmail"].ToString();
+                                loggedEmail = Session["CurrentUserEmail"].ToString();
+                                if (!string.IsNullOrEmpty(Session["CurrentUserRole"] as string))
+                                {
+                                    if (user.firstname != null)
+                                        userFirstname.Value = user.firstname;
+                                    // detailsDiv.Visible = false;
+                                    //TODO: IF USER HAVENT SET UP ACCOUNT DISPLAY A MESSAGE ALERTING
+                                    if (user.surname != null)
+                                        userSurname.Value = user.surname;
+                                    if (user.dob != null)                              
+                                        userdob.Attributes.Add("value",user.dob.ToString("yyyy-MM-dd"));
+                                    if (user.gender != null)
+                                        userGender.Value = user.gender;
+                                    if (user.grade != null)
+                                        userGrade.Value = user.grade.ToString();
+                                    if (user.schoolname != null)
+                                        schoolname.Value = user.schoolname;
+                                    if (user.contact != null)
+                                        contact.Value = user.contact.ToString();
+                                }
 
+                            }
+                            else
+                            {
+                                status.InnerHtml = "<div class='alert alert-success'><strong> Info! </strong > No Prifile Details FOUND!</a>.</div>";
+                            }
                         }
-                        else
+                        else if (Session["CurrentUserRole"].ToString() == "ADMIN  ")
                         {
-                            status.InnerHtml = "<div class='alert alert-success'><strong> Info! </strong > No Prifile Details FOUND!</a>.</div>";
+                            schoolHide.Visible = false;
+                            usergradeHide.Visible = false;
+                            User = client.Get("Administrators/" + Session["CurrentUser"].ToString());
+                            if (User.Body != "null")
+                            {
+                                UserInfo user = User.ResultAs<UserInfo>();
+                                userEmail.Value = Session["CurrentUserEmail"].ToString();
+                                loggedEmail = Session["CurrentUserEmail"].ToString();
+                                if (!string.IsNullOrEmpty(Session["CurrentUserRole"] as string))
+                                {
+                                    if (user.firstname != null)
+                                        userFirstname.Value = user.firstname;
+                                    //detailsDiv.Visible = false;
+                                    if (user.surname != null)
+                                        userSurname.Value = user.surname;
+                                    if (user.dob != null)
+                                        userdob.Attributes.Add("value", user.dob.ToString("yyyy-MM-dd"));
+                                    if (user.gender != null)
+                                        userGender.Value = user.gender;
+                                    if (user.grade != null)
+                                        userGrade.Value = user.grade.ToString();
+                                    if (user.schoolname != null)
+                                        schoolname.Value = user.schoolname;
+                                    if (user.contact != null)
+                                        contact.Value = user.contact.ToString();
+                                }
+
+                            }
+                            else
+                            {
+                                status.InnerHtml = "<div class='alert alert-success'><strong> Info! </strong > No Prifile Details FOUND!</a>.</div>";
+                            }
+                        }
+                        else {
+                            Response.Redirect("TutorRegister.aspx");
                         }
                     }
-                    else if (Session["CurrentUserRole"].ToString() == "TUTOR  ")
-                    {
-                        Response.Redirect("TutorRegister.aspx");
-                        if (!string.IsNullOrEmpty(User.Body))
-                        {
-                            UserInfo user = User.ResultAs<UserInfo>();
-                            userEmail.Value = Session["CurrentUserEmail"].ToString();
-                            loggedEmail = Session["CurrentUserEmail"].ToString();
-                            if (!string.IsNullOrEmpty(Session["CurrentUserRole"] as string))
-                            {
-                                if (user.firstname != null)
-                                    userFirstname.Value = user.firstname;
-                                //detailsDiv.Visible = false;
-                                if (user.surname != null)
-                                    userSurname.Value = user.surname;
-                                if (user.dob != null)
-                                    userdob.Attributes.Add("type", "text");
-                                userdob.Value = user.dob.ToString("d");
-                                if (user.gender != null)
-                                    userGender.Value = user.gender;
-                                if (user.grade != null)
-                                    userGrade.Value = user.grade.ToString();
-                                if (user.schoolname != null)
-                                    schoolname.Value = user.schoolname;
-                                if (user.contact != null)
-                                    contact.Value = user.contact.ToString();
-                            }
-
-                        }
-                        else
-                        {
-                            status.InnerHtml = "<div class='alert alert-success'><strong> Info! </strong > No Prifile Details FOUND!</a>.</div>";
-                        }
-                    }
-                    else if (Session["CurrentUserRole"].ToString() == "ADMIN  ")
-                    {
-                        schoolHide.Visible = false;
-                        usergradeHide.Visible = false;
-                        User = client.Get("Administrators/" + Session["CurrentUser"].ToString());
-                        if (User.Body != null)
-                        {
-                            UserInfo user = User.ResultAs<UserInfo>();
-                            userEmail.Value = Session["CurrentUserEmail"].ToString();
-                            loggedEmail = Session["CurrentUserEmail"].ToString();
-                            if (!string.IsNullOrEmpty(Session["CurrentUserRole"] as string))
-                            {
-                                if (user.firstname != null)
-                                    userFirstname.Value = user.firstname;
-                                //detailsDiv.Visible = false;
-                                if (user.surname != null)
-                                    userSurname.Value = user.surname;
-                                if (user.dob != null)
-                                    userdob.Attributes.Add("type", "text");
-                                userdob.Value = user.dob.ToString("d");
-                                if (user.gender != null)
-                                    userGender.Value = user.gender;
-                                if (user.grade != null)
-                                    userGrade.Value = user.grade.ToString();
-                                if (user.schoolname != null)
-                                    schoolname.Value = user.schoolname;
-                                if (user.contact != null)
-                                    contact.Value = user.contact.ToString();
-                            }
-
-                        }
-                        else
-                        {
-                            status.InnerHtml = "<div class='alert alert-success'><strong> Info! </strong > No Prifile Details FOUND!</a>.</div>";
-                        }
-                    }
-
-
                 }
                 else
                 {
@@ -185,13 +153,6 @@ namespace ProjectTest
             {
                 userInfo.role = "Student";
                 response = client.Update("Students/" + Session["CurrentUser"].ToString(), userInfo);
-                UserInfo result = response.ResultAs<UserInfo>();
-                message = "Your " + result.role + " Details have been Updated!";
-            }
-            else if (Session["CurrentUserRole"].ToString() == "TUTOR  ")
-            {
-                userInfo.role = "Tutor";
-                response = client.Set("Tutors/" + Session["CurrentUser"].ToString(), userInfo);
                 UserInfo result = response.ResultAs<UserInfo>();
                 message = "Your " + result.role + " Details have been Updated!";
             }

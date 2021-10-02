@@ -297,7 +297,6 @@
     <Content Include="Services.aspx" />
     <Content Include="TutorProfile.aspx" />
     <Content Include="TutorRegister.aspx" />
-    <Content Include="TutorProfile.aspx" />
     <Content Include="TutorEvaluation.aspx" />
     <Content Include="Web.config" />
     <Content Include="webfonts\fa-brands-400.svg" />
@@ -402,13 +401,6 @@
     </Compile>
     <Compile Include="TutorEvaluation.aspx.designer.cs">
       <DependentUpon>TutorEvaluation.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="TutorProfile.aspx.cs">
-      <DependentUpon>TutorProfile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TutorProfile.aspx.designer.cs">
-      <DependentUpon>TutorProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="TutorProfile.aspx.cs">
       <DependentUpon>TutorProfile.aspx</DependentUpon>

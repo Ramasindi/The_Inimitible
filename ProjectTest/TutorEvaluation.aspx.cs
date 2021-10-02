@@ -52,7 +52,7 @@ namespace ProjectTest
                         }
                         if (tut.Value.status == "Pending") { 
                         tutorDiv += "<div><div class='card' style='width:400px'>" +
-                            "<img class='card-img-top' src='"+img+"' alt='Card image' style='width:100%'>" +
+                            "<img class='card-img-top' src='" + img+ "' alt='Card image' style='width: 100%;'/>" +
                             "<div class='card-body'><h4 class='card-title'>"+tut.Value.firstname +" " +tut.Value.surname+"</h4>" +
                             "<p class='card-text'>"+tut.Value.about+"</p>" +
                             "<p class='card-text'><a style='color: blue' href='"+tut.Value.transcipt+"'>Download Transcript</a></p>" +

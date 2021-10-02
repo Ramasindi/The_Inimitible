@@ -11,7 +11,7 @@ namespace ProjectTest
 {
 
 
-    public partial class TutorProfile
+    public partial class TutorRegister
     {
 
         /// <summary>
@@ -168,6 +168,51 @@ namespace ProjectTest
         protected global::System.Web.UI.HtmlControls.HtmlInputText communication;
 
         /// <summary>
+        /// idFile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputFile idFile;
+
+        /// <summary>
+        /// matric control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputFile matric;
+
+        /// <summary>
+        /// picture control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputFile picture;
+
+        /// <summary>
+        /// transcript control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputFile transcript;
+
+        /// <summary>
+        /// other control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputFile other;
+
+        /// <summary>
         /// aboutArea control.
         /// </summary>
         /// <remarks>
@@ -177,15 +222,6 @@ namespace ProjectTest
         protected global::System.Web.UI.HtmlControls.HtmlTextArea aboutArea;
 
         /// <summary>
-        /// status control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl status;
-
-        /// <summary>
         /// UpdateProfile control.
         /// </summary>
         /// <remarks>
@@ -193,5 +229,14 @@ namespace ProjectTest
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button UpdateProfile;
+
+        /// <summary>
+        /// status control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl status;
     }
 }

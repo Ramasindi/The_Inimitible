@@ -8,14 +8,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Firebase.Storage;
-using FireSharp.Config;
-using FireSharp.Interfaces;
-using FireSharp.Response;
 using Newtonsoft.Json;
 
 namespace ProjectTest
 {
-    public partial class TutorProfile1 : System.Web.UI.Page
+    public partial class TutorProfile : System.Web.UI.Page
     {
         IFirebaseConfig config = new FirebaseConfig
         {
@@ -24,7 +21,6 @@ namespace ProjectTest
         };
         //Client
         IFirebaseClient client;
-        string loggedEmail;
         //When the page load the program will connect to the client
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -33,7 +29,7 @@ namespace ProjectTest
             if (client != null)
             {
                 Session["CurrentUser"] = (string)HttpContext.Current.Session["UserID"];
-                if (string.IsNullOrEmpty(Session["CurrentUser"] as string))
+                if (!string.IsNullOrEmpty(Session["CurrentUser"] as string))
                 {
                     FirebaseResponse User;
                     User = client.Get("Tutors/" + Session["CurrentUser"].ToString());
@@ -55,6 +51,9 @@ namespace ProjectTest
                         if (user.communication != null)
                             language.InnerText = " " + user.communication;
                     }
+                }
+                else {
+                    Response.Redirect("Login.aspx");
                 }
             }
         }
