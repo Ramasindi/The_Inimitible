@@ -1,0 +1,7 @@
+./ProjectTest/js/config.js
+.vs/
+bin
+obj
+packages
+./ProjectTest/assets/videos
+./ProjectTest/assets/papers
