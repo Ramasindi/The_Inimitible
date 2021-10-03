@@ -1,33 +1,4 @@
 
-//const firebaseConfig = {
-//    apiKey: "AIzaSyC3czO5VVHuXuAjKprn9ETUWDBF5h7e05I",
-//    authDomain: "mind-academy-8357a.firebaseapp.com",
-//    projectId: "mind-academy-8357a",
-//    databaseURL: "https://mind-academy-8357a-default-rtdb.firebaseio.com",
-//    storageBucket: "mind-academy-8357a.appspot.com",
-//    messagingSenderId: "690791753845",
-//    appId: "1:690791753845:web:ef60ccb88a110c8d4c703c",
-//    measurementId: "G-FS70C0B339"
-//};
-
-//if (!firebase.apps.length) {
- // firebase.initializeApp(firebaseConfig);
-//}
-//const firestore = firebase.firestore();
-
-//const servers = {
-		  			   
-//iceServers: [
-//{
-//'url': 'turns:jb-turn1.xirsys.com:443?transport=tcp',
-//'credential': 'f316cf6e-1bf9-11ec-a8af-0242ac120004',
-//'username': 'GwfGIGsnEwNgr3gORkuxQ50CXlvYcOH-Kqsrrkkm5frDDL-TT1UkuGZRACU_A9LAAAAAAGFLt1hPbGl2ZXI='
-//}    
-//,//{
- //     urls: ['stun:stun1.l.google.com:19302', 'stun:stun2.l.google.com:19302'],
-  //  },
-//],
-//};
       let pc = null;
 	  const getIceServers =() => {
 	  	  let username = 'Rowan';
