@@ -77,10 +77,23 @@ namespace ProjectTest
             {
                 Response.Redirect("Home.aspx");
             }
+            double cartPrice = 0;
+            if (currentPlan == "Basic")
+            {
+                cartPrice = 50;
+            }
+            else if (currentPlan == "Standard")
+            {
+                cartPrice = 100;
+            }
+            else {
+                cartPrice = 200;
+            }
             var myCart = new Shoppingcart
             {
                 checkout = false,
-                plan = currentPlan
+                plan = currentPlan,
+                price = cartPrice,
             };
             FirebaseResponse cart = client.Get("Carts/" + Session["CurrentUser"].ToString());
             if (cart.Body != "null")
