@@ -25,53 +25,27 @@
         </div> <!-- end of container -->
     </section> <!-- end of home -->
 
-
-    <!-- Information -->
-    <section class="information">
-        <div class="container-fluid">  
-            <div class="row text-light">
-                <div class="col-lg-4 text-center p-5" data-aos="zoom-in">
-                    <i class="fas fa-tachometer-alt fa-3x p-2"></i>
-                    <h4 class="py-3">Download 1 GBPS</h4>
-                    <p class="para-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam odit consequatur doloribus natus in suscipit!</p>
-                </div>
-                <div class="col-lg-4 text-center p-5"  data-aos="zoom-in">
-                    <i class="fas fa-clock fa-3x p-2"></i>
-                    <h4 class="py-3">99% Internet Uptime</h4>
-                    <p class="para-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam odit consequatur doloribus natus in suscipit!</p>
-                </div>
-                <div class="col-lg-4 text-center p-5 text-dark"  data-aos="zoom-in"> 
-                    <i class="fas fa-headset fa-3x p-2"></i>
-                    <h4 class="py-3">24/7 Support </h4>
-                    <p class="para-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam odit consequatur doloribus natus in suscipit!</p>
-                </div>
-            </div>
-        </div> <!-- end of container -->
-    </section> <!-- end of information -->
-    
-
     <!-- About -->
     <section class="about d-flex align-items-center text-light py-5" id="about">
         <div class="container" >
             <div class="row d-flex align-items-center">
                 <div class="col-lg-7" data-aos="fade-right">
                     <p>ABOUT US</p>
-                    <h1>We are top internet <br> service company</h1>
-                    <p class="py-2 para-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non sed accusantium aut dolores inventore architecto modi cupiditate eligendi corporis, illum illo culpa. Reiciendis, molestias. Illum voluptatum quisquam ad veritatis dolorem.</p>
-                    <p class="py-2 para-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non sed accusantium aut dolores inventore architecto modi cupiditate eligendi corporis, illum illo culpa. Reiciendis, molestias. Illum voluptatum quisquam ad veritatis dolorem.</p>
+                    <h2 >We are a top, affordable tutoring platform for both<br>  basic and higher education</h2>
+                    <p class="py-2 para-light">Mind Academy offers extra classes without any restrictions. We offer practise exercises, directional videos and custom made learning dashboard to empower both learners and students to learn at their own pace, anywhere it suits them.</p>
+                    <p class="py-2 para-light">Centre of attention being skill mastery to come to the aid of learners to form strong foundations. Only the sky is the limit!</p>
 
                     <div class="my-3">
                         <a class="btn" href="Plans.aspx">Learn More</a>
                     </div>
                 </div>
                 <div class="col-lg-5 text-center py-4 py-sm-0" data-aos="fade-down"> 
-                    <img class="img-fluid" src="./assets/images/about.jpg" alt="about" >
+                    <img class="img-fluid" src="./assets/images/imagess.jpg" alt="about" >
+                    
                 </div>
             </div> <!-- end of row -->
         </div> <!-- end of container -->
     </section> <!-- end of about -->
-
-
 
     <!-- Work -->
     <section class="work d-flex align-items-center py-5" >
@@ -264,7 +238,7 @@
                     <div class="p-2"><i class="far fa-envelope fa-3x"></i></div>
                     <div class="ms-2">
                         <h6>SEND US MESSAGE</h6>
-                        <p>infodemofile@example.com</p>
+                        <p>theinimitiblem@gmail.com</p>
                     </div>
                 </div>
                 <div class="col-lg-3 d-flex align-items-center" >

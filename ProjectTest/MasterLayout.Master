@@ -102,6 +102,10 @@
                         <a class="nav-link dropdown-toggle" id="myAccount" data-bs-toggle="dropdown" aria-expanded="false" href="#">My Account</a>
                         
                         <ul class="dropdown-menu" aria-labelledby="myAccount">
+
+
+                            <li id="prevTut"><a class ="dropdown-item" id="prev" href="PreviousTutorials.aspx">Previous Tutorials</a></li>
+                            
                             <li id="registerMyAcc" runat="server"><a class="dropdown-item" href="Register.aspx">Register</a></li>
                             <li id="loginDivMyAcc" runat="server"><div class="dropdown-divider"></div></li>
                             <li id="loginMyAcc" runat="server"><a class="dropdown-item" href="Login.aspx">Login</a></li>
@@ -117,6 +121,7 @@
 
                             <li id="profileDivMyAcc" runat="server"><div class="dropdown-divider"></div></li>
                             <li id="logoutMyAcc" runat="server"><a class="dropdown-item" id="logout">Logout</a></li>
+
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -145,12 +150,17 @@
             </div> <!-- end of navbar-collapse -->
         </div> <!-- end of container -->
     </nav> <!-- end of navbar -->
-    <!-- end of navigation -->
+    <!-- end of navigation --> 
+   <%-- </br>
+     </br>
+     </br>
+     </br>--%>
 
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
+
 
     <!-- Footer -->
     <section class="footer text-light">
