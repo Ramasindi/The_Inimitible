@@ -109,6 +109,9 @@
                             <li id="logoutDivMyAcc" runat="server"><div class="dropdown-divider"></div></li>
                             <li id="profileMyAcc" runat="server"><a class="dropdown-item" href="Profile.aspx">Profile</a></li>
                            
+                            <li id="invoicesDiv" runat="server"><div class="dropdown-divider"></div></li>
+                            <li id="invoices" runat="server"><a class="dropdown-item" href="Invoices.aspx">Invoices</a></li>
+
                             <li id="tutProfileDiv" runat="server"><div class="dropdown-divider"></div></li>
                             <li id="tutProfile" runat="server"><a class="dropdown-item" href="TutorRegister.aspx">Tutor Registration</a></li>
                             

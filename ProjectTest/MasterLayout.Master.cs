@@ -41,6 +41,8 @@ namespace ProjectTest
                 tutProfile.Visible = false;
                 tutEvalDiv.Visible = false;
                 tutEval.Visible = false;
+                invoices.Visible = false;
+                invoicesDiv.Visible = false;
             }
             else
             {
@@ -91,18 +93,24 @@ namespace ProjectTest
                     {
                         UserInfo u = tut.ResultAs<UserInfo>();
                         subu.InnerText = u.status;//check approval
+                        if (u.status == "Pending")
+                        {
+                            liveSession.Visible = false;
+                        }
+                        else {
+                            liveSession.Visible = true;
+                        }
                     }
                     else
                     {
                         subu.InnerText = "Pending";
                     }
-                    
-                    
-                    liveSession.Visible = true;
                     tutProfileDiv.Visible = false;
                     tutProfile.Visible = false;
                     tutEvalDiv.Visible = false;
                     tutEval.Visible = false;
+                    invoices.Visible = false;
+                    invoicesDiv.Visible = false;
                 }
                 if (Session["CurrentUserRole"] as string == "STUDENT")
                 {

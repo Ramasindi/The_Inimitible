@@ -39,7 +39,7 @@
                                 </div>
                                 <div class="form-group py-2 input-group-sm">
                                     <label for="dob">Select your Date of Birth:</label>
-                                    <input type="date" required class="form-control form-control-input" id="userdob" runat="server">
+                                    <input type="date" required value="2000-01-01" class="form-control form-control-input" id="userdob" runat="server">
                                 </div>
                                 <div class="form-group py-2 input-group-sm">
                                     <label for="contact">Enter Contact:</label>

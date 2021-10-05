@@ -67,7 +67,7 @@
                                         </div>
                                         <div class="form-group py-2 input-group-sm">
                                             <label for="dob">Date of Birth:</label>
-                                            <input type="date" required class="form-control form-control-input" id="userdob" runat="server">
+                                            <input type="date" required value="2001-01-01" class="form-control form-control-input" id="userdob" runat="server">
                                         </div>
                                         <div class="form-group py-2 input-group-sm">
                                             <label for="contact">Contact Number:</label>
@@ -161,7 +161,7 @@
                                         <div class="form-group py-2 input-group-sm">
                                             <label for="picture"><strong>Your Professional Headshot</strong><span style="opacity: .6">(*Required)</span></label>
                                             <br />
-                                            <input type="file" id="picture" onchange="validateSize(this)" name="filename" runat="server" />
+                                            <input type="file" id="picture" onchange="validateSize(this)" name="filename" runat="server" accept="image/x-png,image/gif,image/jpeg"  />
                                         </div>
                                         <div class="form-group py-2 input-group-sm">
                                             <label for="transcript"><strong>University Transcript</strong><span style="opacity: .6">(*Required)</span></label>
@@ -306,6 +306,7 @@
                                       })
                                       input.value = null;
                                   }
+                                 
                               }
                           </script>
                         </div>

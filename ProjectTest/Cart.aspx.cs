@@ -10,6 +10,8 @@ using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
 using Newtonsoft.Json;
+using Firebase.Storage;
+using System.IO;
 
 namespace ProjectTest
 {
@@ -24,6 +26,7 @@ namespace ProjectTest
         IFirebaseClient client;
         string currentPlan = "";
         string PriceR = "";
+        double invPrice = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
             //configuring client with the project credentials
@@ -66,6 +69,7 @@ namespace ProjectTest
                                 packageItem4.InnerText = plan.packageItem4;
                                 price.InnerText = "R" + plan.price;
                                 PriceR = "R" + plan.price;
+                                invPrice = ((double)plan.price);
                                 items.InnerHtml = "<b>TOTAL:</b> 1 item";
                             }
                         }
@@ -88,6 +92,7 @@ namespace ProjectTest
                                     packageItem3.InnerText = plan.packageItem3;
                                     packageItem4.InnerText = plan.packageItem4;
                                     price.InnerText = "R" + plan.price;
+                                    invPrice = ((double)plan.price);
                                     PriceR = "R" + plan.price;
                                     items.InnerHtml = "<b>TOTAL:</b> 1 item";
                                 }
@@ -109,15 +114,14 @@ namespace ProjectTest
         }
 
         protected void Checkout_Click(object sender, EventArgs e)
-        {
-            DateTime dt = DateTime.Today.AddMonths(1);
-            dt.AddDays(30);
+        {  
+            DateTime dt = DateTime.Now.AddMonths(1).AddHours(2);
             var mySub = new Subscription
             {
                 plan = currentPlan,
                 status = "Active",
                 paymentMethod = "Card",
-                startDate = DateTime.Today,
+                startDate = DateTime.Now.AddHours(2),
                 endDate = dt
             };
 
@@ -125,7 +129,7 @@ namespace ProjectTest
             if (sub.Body != "null")
             {
                 Subscription existingSub = sub.ResultAs<Subscription>();
-                if(existingSub.endDate >= DateTime.Today){
+                if(existingSub.endDate >= DateTime.Now){
                                        
                     Response.Redirect("Home.aspx");
                 }
@@ -135,14 +139,19 @@ namespace ProjectTest
                     FirebaseResponse cart = client.Get("Carts/" + Session["CurrentUser"].ToString());
                     if (cart.Body != "null")
                     {
-                        sub = client.Update("Subscriptions/" + Session["CurrentUser"].ToString(), mySub);
+                        //sub = client.Update("Subscriptions/" + Session["CurrentUser"].ToString(), mySub);
                         cartplan.InnerText = currentPlan + " Plan";
-                        subscriptionValid.InnerText = "" + DateTime.Today.AddMonths(1);
+                        subscriptionValid.InnerText = "" + DateTime.Now.AddMonths(1).ToString("yyyy-MM-dd HH:mm");
                         string EmailR = Session["CurrentUserEmail"].ToString();
                         string PlanR = currentPlan + " Plan";
-                        string EndDateR = dt.ToString("dd MMMMM yyyy");
+                        string EndDateR = dt.ToString("yyyy-MM-dd");
+
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Email", "sendReceipt('" + EmailR + "','" + PriceR + "','" + EndDateR + "','" + PlanR + "');", true);
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "chekoutModal();", true);
+                        //generating invoice
+                        invoiceDetails invoice = new invoiceDetails { planName = currentPlan + " Bundle", pricePaid = invPrice, paymentMethod = mySub.paymentMethod, startDate = mySub.startDate, endDate = mySub.endDate, email = Session["CurrentUserEmail"].ToString() };
+                        client.Set("Invoices/" + Session["CurrentUser"].ToString() + "/" + Guid.NewGuid().ToString(), invoice);
+
                     }
                     else
                     {
@@ -164,10 +173,13 @@ namespace ProjectTest
                     subscriptionValid.InnerText =  "" + DateTime.Today.AddMonths(1);
                     string EmailR = Session["CurrentUserEmail"].ToString();
                     string PlanR = currentPlan + " Plan";
-                    string EndDateR = dt.ToString("dd MMMMM yyyy");
+                    string EndDateR = dt.ToString("yyyy-MM-dd");
+                    //generate invoice
+                    invoiceDetails invoice = new invoiceDetails { planName = currentPlan + " Bundle", pricePaid = invPrice, paymentMethod = mySub.paymentMethod, startDate = mySub.startDate, endDate = mySub.endDate, email = Session["CurrentUserEmail"].ToString() };
+                    client.Set("Invoices/" + Session["CurrentUser"].ToString() + "/" + Guid.NewGuid().ToString(), invoice);
+
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Email", "sendReceipt('"+EmailR+"','"+PriceR+"','"+EndDateR+"','"+PlanR+"');", true);
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "chekoutModal();", true);
-                   
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "chekoutModal();", true);                  
                 }
                 else
                 {

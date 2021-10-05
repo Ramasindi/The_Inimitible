@@ -7,7 +7,9 @@
                 emailjs.init("user_InRqQbUTsgjOHV3lAlmq9");
             })();
         </script>
-</asp:Content>
+        <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+ </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="form1" runat="server">
         <!-- Header -->
@@ -70,8 +72,10 @@
                                     <div >
                                         <br />
                                      <span style="float: left;" id="items" runat="server"></span>  <span style="float: right;"><b id ="price" runat="server"></b></span>
+                                    <br /><br />
                                     </div>
-                                  <asp:Button style="color: orangered;" class="btn btn-primary form-control" ID="Checkout" runat="server" OnClick="Checkout_Click" Text="Checkout" Font-Bold="True" />                                
+                                    
+                                  <asp:Button  class="mdc-button mdc-button--raised form-control" ID="Checkout" runat="server" OnClick="Checkout_Click" Text="Checkout" Font-Bold="True" />                                
                                 </div>
                               </div>
                                 <br />
@@ -123,21 +127,22 @@
     </div>
   </div>
         <script type="text/javascript">
-            function sendMail(Email,Price,EndDate,Plan) {
-                
-                var templateParams = {
-                    price: Price,
-                    endDate: EndDate,
-                    plan: Plan,
-                    email: Email,
-                };
-                emailjs.send('service_xj13z4x', 'template_jn2wybu', templateParams)
-                .then(function (response) {
-                    console.log('SUCCESS!', response.status, response.text);
-                }, function (error) {
-                    console.log('FAILED...', error);
-                });
-            }
+            function sendReceipt(Email, Price, EndDate, Plan) {
+
+                    var templateParams = {
+                        price: Price,
+                        endDate: EndDate,
+                        plan: Plan,
+                        email: Email,
+                    };
+                    emailjs.send('service_xj13z4x', 'template_jn2wybu', templateParams)
+                        .then(function (response) {
+                            console.log('SUCCESS!', response.status, response.text);
+                        }, function (error) {
+                            console.log('FAILED...', error);
+                        });
+                }
+
         </script>
             <!-- end of container -->
         <!-- end of ex-basic-1 -->

@@ -78,6 +78,24 @@ namespace ProjectTest
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl profileMyAcc;
 
         /// <summary>
+        /// invoicesDiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl invoicesDiv;
+
+        /// <summary>
+        /// invoices control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl invoices;
+
+        /// <summary>
         /// tutProfileDiv control.
         /// </summary>
         /// <remarks>

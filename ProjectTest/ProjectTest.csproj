@@ -278,6 +278,7 @@
     <Content Include="css\swiper.css" />
     <Content Include="ForgotPassword.aspx" />
     <Content Include="Home.aspx" />
+    <Content Include="Invoices.aspx" />
     <Content Include="js\aos.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\config.js" />
@@ -338,6 +339,14 @@
     </Compile>
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="invoiceDetails.cs" />
+    <Compile Include="Invoices.aspx.cs">
+      <DependentUpon>Invoices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Invoices.aspx.designer.cs">
+      <DependentUpon>Invoices.aspx</DependentUpon>
     </Compile>
     <Compile Include="LiveSession.aspx.cs">
       <DependentUpon>LiveSession.aspx</DependentUpon>
