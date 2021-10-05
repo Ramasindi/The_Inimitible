@@ -4,6 +4,7 @@
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
+const firestore = firebase.firestore();
 var database = firebase.database();
 var currentUser = {};
 var provider = new firebase.auth.GoogleAuthProvider();
@@ -44,9 +45,9 @@ $("#logout").on("click",function () {
 });
 
 //Functions with Firebase
-//This function is for creating/Registering new users
-//TODO: Handle TUTOR here [TUT-Password|thalu@mindacademy.com]
-//TODO: Handle ADMIN here [SUPER-Password|admin@mindacademy.com]
+//Mind Academy Students can use email, google and Facebook to login
+//Mind Academy Tutotors and Admins will ONLY use email to REGISTEER and then can use google and facebook to login. 
+
 function CreateNewUser(email, password, reEnterpassword) {
     document.getElementById("signUpSpinner").style.display = "inline-block";
     if (email == "" || password == "" || reEnterpassword == "") {
@@ -67,7 +68,11 @@ function CreateNewUser(email, password, reEnterpassword) {
             } else {
                 writeNewUser(result,"STUDENT");
             }
+            //Send email verification
+            firebase.auth().currentUser.sendEmailVerification();
+
             document.getElementById("signUpSpinner").style.display = "none";
+            alertToast("success","Signed in successfully");
         }).catch((error) => {
             // Handle Errors here
             document.getElementById("signUpSpinner").style.display = "none";
@@ -77,6 +82,25 @@ function CreateNewUser(email, password, reEnterpassword) {
                 return;
             }
         });
+}
+//alerting users that they are signed in
+function alertToast(iconType,message){
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'bottom',
+        showConfirmButton: false,
+        timerProgressBar: true,
+        timer: 3000,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
+
+    Toast.fire({
+        icon: iconType,
+        title: message
+    })
 }
 //This function is for signing in existing users
 function SignIn(email, password) {
@@ -92,6 +116,7 @@ function SignIn(email, password) {
                 sendCurrentUser(result.user.uid, "Home.aspx", "STUDENT", result.user.email);
             }
             document.getElementById("signInSpinner").style.display = "none";
+            alertToast("success","Signed in successfully");
         }).catch((error) => {
             // Handle Errors here.
             document.getElementById("signInSpinner").style.display = "none";
@@ -116,13 +141,19 @@ function SignUserWithGoogle(page) {
             // This gives you a Google Access Token. You can use it to access the Google API.
             var token = credential.accessToken;
             if (result.additionalUserInfo.isNewUser) {
-                writeNewUser(result,ROLE);
-                document.getElementById("googleSignSpinner").style.display = "none";
+                writeNewUser(result, "STUDENT");
+                if (page == "Login.aspx") {
+                    document.getElementById("googleLogSpinner").style.display = "none";
+                } else {
+                    document.getElementById("googleSignSpinner").style.display = "none";
+                }
+               
             } else {
                 document.getElementById("googleLogSpinner").style.display = "none";
                 //HANDLE TO DETERMINE ROLE
-                sendCurrentUser(result.user.uid, "Home.aspx", "STUDENT", result.user.email);
+                sendCurrentUser(result.user.uid, "Home.aspx", "STUDENT", result.user.email);               
             }
+            alertToast("success","Signed in successfully");
         }).catch((error) => {
             // Handle Errors here.    
             var errorMessage = error.message;
@@ -149,14 +180,19 @@ function signWithFB(page) {
         .then((result) => {
             console.log(result)
             if (result.additionalUserInfo.isNewUser) {
-                writeNewUser(result,ROLE);
-                document.getElementById("facebookSignSpinner").style.display = "none";
+                writeNewUser(result, "STUDENT");
+                if (page == "Login.aspx") {
+                    document.getElementById("facebookLogSpinner").style.display = "none";
+                } else {
+                    document.getElementById("facebookSignSpinner").style.display = "none";
+                }                
             } else {
                 document.getElementById("facebookLogSpinner").style.display = "none";
                 //HANDLE TO DETERMINE ROLE
                 sendCurrentUser(result.user.uid, "Home.aspx", "STUDENT", result.user.email);
                 
             }
+            alertToast("success","Signed in successfuly");
         })
         .catch((error) => {
             // Handle Errors here.
@@ -176,19 +212,23 @@ firebase.auth().onAuthStateChanged((user) => {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/firebase.User
         var uid = user.uid;
+        var role;
         var studentRef = firebase.database().ref('Students/' + uid);
         var tutorRef = firebase.database().ref('Tutors/' + uid);
         var adminRef = firebase.database().ref('Administrators/' + uid);
         studentRef.on('value', function (snapshot) {
             if (snapshot.exists()) {
+                role = snapshot.val().role.toUpperCase();
                 alreadyLogged(uid, snapshot.val().role.toUpperCase(), user.email);
             } else {
                 tutorRef.on('value', function (snapshot) {
                     if (snapshot.exists()) {
+                        role = snapshot.val().role.toUpperCase();
                         alreadyLogged(uid, snapshot.val().role.toUpperCase(), user.email);
                     } else {
                         adminRef.on('value', function (snapshot) {
                             if (snapshot.exists()) {
+                                role = snapshot.val().role.toUpperCase();
                                 alreadyLogged(uid, snapshot.val().role.toUpperCase(), user.email);
                             } else {
                                 console.log("No data available in Admin table");
@@ -200,24 +240,44 @@ firebase.auth().onAuthStateChanged((user) => {
                 console.log("No data available in Student table");
             }
         });
-
         currentUser = user;
+        setTimeout(function () {
+            if (!currentUser.emailVerified && role !== "ADMIN") {
+                Swal.fire({
+                    title: 'Your Email address is not Verified!',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Resend verification Link',
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp'
+                    }
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        //send email verification
+                        firebase.auth().currentUser.sendEmailVerification()
+                        Swal.fire(
+                            'Sent!',
+                            'A verification link has been sent to ' + user.email,
+                            'success'
+                        )
+                    }
+                })
+            }
+        }, 7000);      
         if (currentUser.displayName !== null) {
             document.getElementById("myAccount").innerHTML = currentUser.displayName;
         } else {
             document.getElementById("myAccount").innerHTML = user.email;
         }
         console.log(currentUser);
-        document.getElementById("registerMyAcc").style.display = "none";
-        document.getElementById("loginMyAcc").style.display = "none";
-        document.getElementById("loginDivMyAcc").style.display = "none";
-        document.getElementById("logoutDivMyAcc").style.display = "none";
     } else {
-        // User is signed out, remove logout under my account dropdown
-        document.getElementById("logoutMyAcc").style.display = "none";
-        document.getElementById("profileMyAcc").style.display = "none";
-        document.getElementById("profileDivMyAcc").style.display = "none";
-        console.log("No User");
+        console.log("No User");    
+        clearSession();
     }
 });
 //This function will writer new user to the dB
@@ -256,8 +316,7 @@ function writeNewUser(result,ROLE) {
 function SignOut() {
     firebase.auth().signOut().then(function () {
         // Sign-out successful.
-            NullifyUID()
-            window.location = "Home.aspx";
+            NullifyUID();
             console.log("User has signed out");
     }).catch(function (error) {
         // An error happened.
@@ -299,7 +358,8 @@ function NullifyUID() {
             data: "LOGGEDOUT",
             dataType: "text",
             success: function () {
-                console.log("STATE DESTROYED");
+                console.log("STATE DESTROYED");        
+                window.location = "Home.aspx";
             },
             error: function (request, message, error) {
                 console.log(request + message + error);
@@ -309,8 +369,27 @@ function NullifyUID() {
         alert(e);
     }
 }
-
+//If user cleared cache or cookies while logged in
+function clearSession() {
+    try {
+        $.ajax({
+            type: "POST",
+            url: "MailHandler.ashx",
+            cache: false,
+            data: "LOGGEDOUT",
+            dataType: "text",
+            success: function () {
+            },
+            error: function (request, message, error) {
+                console.log(request + message + error);
+            }
+        });
+    } catch (e) {
+        alert(e);
+    }
+}
 function sendCurrentUser(UID, page, ROLE, EMAIL) {
+
     if (ROLE !== "STUDENT") {
         ROLE += "  ";
     }
@@ -322,8 +401,13 @@ function sendCurrentUser(UID, page, ROLE, EMAIL) {
             data: UID+ROLE+EMAIL,
             dataType: "text",
             success: function (UID,ROLE,EMAIL) {
-                console.log(UID+ROLE+EMAIL);
-                window.location.href = page;
+                console.log(UID + ROLE + EMAIL);
+                if (getParam("plan") !== null) {
+                    console.log(getParam("plan"));
+                    window.location.href = "AboutPlan.aspx?plan=" + getParam("plan");
+                } else {
+                    window.location.href = page;
+                }
             },
             error: function (request, message, error) {
                 console.log(request + message + error);
@@ -333,4 +417,30 @@ function sendCurrentUser(UID, page, ROLE, EMAIL) {
         alert(e);
     }
 
+}
+
+//Forgot password
+$("#resetEmail").on("click", function (e) {
+    e.preventDefault();
+    var email = $("#resetemail").val();
+    document.getElementById("resetSpinner").style.display = "inline-block";
+    resetPassword(email);
+});
+
+function resetPassword(resetEmail) {
+    firebase.auth().sendPasswordResetEmail(resetEmail).then(function (response) {
+        // Email sent.
+        document.getElementById("ResetAlert").innerHTML = "<strong>Info!</strong> A reset password link has been sent to <b>" +resetEmail+"</b>";
+        document.getElementById("resetSpinner").style.display = "none";
+    }).catch(function (error) {
+        // An error happened.
+        var errorMessage = error.message;
+        document.getElementById("ResetAlert").innerHTML = "<strong>Error!</strong> '" + errorMessage + "'";
+        document.getElementById("resetSpinner").style.display = "none";
+    });
+}
+
+//Get URL param
+function getParam(param) {
+    return new URLSearchParams(window.location.search).get(param);
 }

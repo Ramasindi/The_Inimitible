@@ -11,7 +11,7 @@ namespace ProjectTest
 {
 
 
-    public partial class Profile
+    public partial class AboutPlan
     {
 
         /// <summary>
@@ -24,129 +24,102 @@ namespace ProjectTest
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Urole control.
+        /// planName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Urole;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl planName;
 
         /// <summary>
-        /// userEmail control.
+        /// planDes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl userEmail;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl planDes;
 
         /// <summary>
-        /// detailsDiv control.
+        /// packItem1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl detailsDiv;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl packItem1;
 
         /// <summary>
-        /// userFirstname control.
+        /// packItem2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText userFirstname;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl packItem2;
 
         /// <summary>
-        /// userSurname control.
+        /// packItem3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText userSurname;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl packItem3;
 
         /// <summary>
-        /// userdob control.
+        /// packItem4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl userdob;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl packItem4;
 
         /// <summary>
-        /// contact control.
+        /// planPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl contact;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl planPrice;
 
         /// <summary>
-        /// userGender control.
+        /// AddToCart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect userGender;
+        protected global::System.Web.UI.WebControls.Button AddToCart;
 
         /// <summary>
-        /// schoolHide control.
+        /// planImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl schoolHide;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl planImage;
 
         /// <summary>
-        /// schoolname control.
+        /// cartplan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText schoolname;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl cartplan;
 
         /// <summary>
-        /// usergradeHide control.
+        /// subscription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl usergradeHide;
-
-        /// <summary>
-        /// userGrade control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl userGrade;
-
-        /// <summary>
-        /// status control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl status;
-
-        /// <summary>
-        /// UpdateProfile control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button UpdateProfile;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl subscription;
     }
 }

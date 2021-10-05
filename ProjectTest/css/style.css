@@ -614,6 +614,17 @@ li {
 	padding-bottom: 0.775rem;
 }
 
+/**********************/
+/*     Tutor Form     */
+/**********************/
+.tutorForm{
+	justify-content: center;
+	align-items: center;
+}
+
+.tab span {
+	color: red;
+}
 
 /******************************/
 /*     Back To Top Button     */

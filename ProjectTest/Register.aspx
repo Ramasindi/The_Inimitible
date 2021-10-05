@@ -54,7 +54,7 @@
                         
                     </div>
                     <div class="col-lg-6 d-flex align-items-center" data-aos="fade-down">
-                    <img class="img-fluid d-none d-lg-block" src="./assets/images/register.jpg" loading="eager" alt="register">        
+                    <img class="img-fluid d-none d-lg-block" src="https://firebasestorage.googleapis.com/v0/b/mind-academy-8357a.appspot.com/o/images%2Fregister.jpg?alt=media&token=1343ef50-4415-4ac3-aefa-cd171c8109d7" loading="eager" alt="register">        
                 </div>
                 </div>
                     <br />

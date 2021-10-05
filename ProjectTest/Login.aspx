@@ -53,13 +53,13 @@
 
                         </div>
                         <div class="col-lg-6 d-flex align-items-center" data-aos="fade-down">
-                            <img class="img-fluid d-none d-lg-block" src="./assets/images/login.jpg" loading="eager" alt="login">
+                            <img class="img-fluid d-none d-lg-block" src="https://firebasestorage.googleapis.com/v0/b/mind-academy-8357a.appspot.com/o/images%2Flogin.jpg?alt=media&token=6bc850bd-ecc0-4b56-8762-7880b318bee0" loading="eager" alt="login">
                         </div>
                     </div>
                     <br />
                     <div class="alert alert-light">
                         <a href="Register.aspx" class="alert-link"><strong>Not yet Registerd?</strong> | </a>
-                        <a href="#" class="alert-link"><strong>Forgot password?</strong></a>
+                        <a href="ForgotPassword.aspx" class="alert-link"><strong>Forgot password?</strong></a>
                     </div>
                     <br />
                     <br />

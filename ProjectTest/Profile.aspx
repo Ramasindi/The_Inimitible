@@ -55,18 +55,18 @@
                                         <option>Other</option>
                                     </select>
                                     </div>
-                                <div class="form-group py-2 input-group-sm">
+                                <div id="schoolHide" runat="server" class="form-group py-2 input-group-sm">
                                     <label for="schoolname">Enter School Name:</label>
                                     <input type="text" required class="form-control form-control-input" id="schoolname" runat="server" placeholder="School Name">
                                 </div>
-                                <div class="form-group py-2 input-group-sm">
+                                <div id="usergradeHide" runat="server" class="form-group py-2 input-group-sm">
                                     <label for="userGrade">Enter Current Grade:</label>
                                     <input type="number" min="6" max="12" required class="form-control form-control-input" id="userGrade" runat="server" placeholder="Grade">
                                 </div>
                             </div>
                             <div id="status" runat="server">
 
-                        </div>
+                            </div>
                            
                             <asp:Button  style="color: black; float: left" class="btn btn-primary mt-3" runat="server" Text="Update Details" ID="UpdateProfile" OnClick="UpdateProfile_Click" />                           
                         </div>
