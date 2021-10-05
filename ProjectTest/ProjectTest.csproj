@@ -278,6 +278,7 @@
     <Content Include="css\swiper.css" />
     <Content Include="ForgotPassword.aspx" />
     <Content Include="Home.aspx" />
+    <Content Include="HomeworkHelper.aspx" />
     <Content Include="Invoices.aspx" />
     <Content Include="js\aos.js" />
     <Content Include="js\bootstrap.min.js" />
@@ -289,9 +290,14 @@
     <Content Include="js\videochat.js" />
     <Content Include="LiveSession.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="MentorshipProgramme.aspx" />
     <Content Include="obj\Debug\ProjectTest.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\ProjectTest.dll" />
     <Content Include="obj\Debug\ProjectTest.pdb" />
+
+    <Content Include="PreviousTutorials.aspx" />
+    <Content Include="StyleSheet1.css" />
+
     <Content Include="Plans.aspx" />
     <Content Include="Profile.aspx" />
     <Content Include="Register.aspx" />
@@ -299,10 +305,12 @@
     <Content Include="TutorProfile.aspx" />
     <Content Include="TutorRegister.aspx" />
     <Content Include="TutorEvaluation.aspx" />
+
     <Content Include="Web.config" />
     <Content Include="webfonts\fa-brands-400.svg" />
     <Content Include="webfonts\fa-regular-400.svg" />
     <Content Include="webfonts\fa-solid-900.svg" />
+    <Content Include="PastPapers.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutPlan.aspx.cs">
@@ -340,6 +348,12 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="HomeworkHelper.aspx.cs">
+      <DependentUpon>HomeworkHelper.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomeworkHelper.aspx.designer.cs">
+      <DependentUpon>HomeworkHelper.aspx</DependentUpon>
     <Compile Include="invoiceDetails.cs" />
     <Compile Include="Invoices.aspx.cs">
       <DependentUpon>Invoices.aspx</DependentUpon>
@@ -372,6 +386,21 @@
     <Compile Include="MasterLayout.Master.designer.cs">
       <DependentUpon>MasterLayout.Master</DependentUpon>
     </Compile>
+    <Compile Include="MentorshipProgramme.aspx.cs">
+      <DependentUpon>MentorshipProgramme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MentorshipProgramme.aspx.designer.cs">
+      <DependentUpon>MentorshipProgramme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="PreviousTutorials.aspx.cs">
+      <DependentUpon>PreviousTutorials.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PreviousTutorials.aspx.designer.cs">
+      <DependentUpon>PreviousTutorials.aspx</DependentUpon>
+
     <Compile Include="PlanDetail.cs" />
     <Compile Include="Plans.aspx.cs">
       <DependentUpon>Plans.aspx</DependentUpon>
@@ -426,6 +455,13 @@
       <DependentUpon>TutorRegister.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserInfo.cs" />
+    <Compile Include="PastPapers.aspx.cs">
+      <DependentUpon>PastPapers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PastPapers.aspx.designer.cs">
+      <DependentUpon>PastPapers.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterLayout.Master" />

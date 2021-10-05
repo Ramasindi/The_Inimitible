@@ -3,3 +3,5 @@
 bin
 obj
 packages
+./ProjectTest/assets/videos
+./ProjectTest/assets/papers
