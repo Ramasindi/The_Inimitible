@@ -354,6 +354,7 @@
     </Compile>
     <Compile Include="HomeworkHelper.aspx.designer.cs">
       <DependentUpon>HomeworkHelper.aspx</DependentUpon>
+	  </Compile>
     <Compile Include="invoiceDetails.cs" />
     <Compile Include="Invoices.aspx.cs">
       <DependentUpon>Invoices.aspx</DependentUpon>
@@ -400,7 +401,7 @@
     </Compile>
     <Compile Include="PreviousTutorials.aspx.designer.cs">
       <DependentUpon>PreviousTutorials.aspx</DependentUpon>
-
+</Compile>
     <Compile Include="PlanDetail.cs" />
     <Compile Include="Plans.aspx.cs">
       <DependentUpon>Plans.aspx</DependentUpon>
