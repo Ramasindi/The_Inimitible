@@ -268,7 +268,7 @@ firebase.auth().onAuthStateChanged((user) => {
                     }
                 })
             }
-        }, 7000);      
+        }, 10000);      
         if (currentUser.displayName !== null) {
             document.getElementById("myAccount").innerHTML = currentUser.displayName;
         } else {

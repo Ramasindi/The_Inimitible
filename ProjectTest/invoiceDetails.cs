@@ -15,4 +15,8 @@ namespace ProjectTest
         public string email { get; set; }
 
     }
+    public class invoiceKey { 
+        public string invK { get; set; }
+        public invoiceDetails invoiceDetails { get; set; } 
+    }
 }

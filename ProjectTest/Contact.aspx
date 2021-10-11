@@ -74,7 +74,7 @@
                     </div> <!-- end of div -->
                 </div> <!-- end of col -->
                 <div class="col-lg-6 d-flex align-items-center" data-aos="fade-down">
-                    <img class="img-fluid d-none d-lg-block" src="./assets/images/contact.jpg" alt="contact">        
+                    <img class="img-fluid d-none d-lg-block" src="https://firebasestorage.googleapis.com/v0/b/mind-academy-8357a.appspot.com/o/images%2Fcontact.jpg?alt=media&token=32e8a2ab-a472-4681-9ed0-c430a43707a5" alt="contact">        
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->

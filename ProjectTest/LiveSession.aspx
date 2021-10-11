@@ -92,20 +92,6 @@ emailjs.send('service_86pd4e9', 'template_mjfgs3m', templateParams)
                         <video id="remoteVideo" autoplay playsinline="true" style="width: 40vw; height: 30vw; margin: 2rem; background: #2c3e50;"></video>
                       </div>
                   </div>
-                   <%-- <h2>Create a new Call</h2>
-                    <p>Before you start a call enter email you are calling below.</p>--%>
-<%--                    <button class="mdc-button mdc-button--raised" id="callButton" disabled>
-                        <i class="material-icons mdc-button__icon" aria-hidden="true">group_add</i>
-                        <span class="mdc-button__label">Start Call</span>
-                     </button>--%>
-	                <%--<input class="mdc-text-field" id="email" placeholder="Enter email to call"/>--%>
-                    <%--<h2>Join a Call</h2>--%>
-    
-                   
-                    <%--<button class="mdc-button mdc-button--raised" id="answerButton" disabled>
-                        <i class="material-icons mdc-button__icon" aria-hidden="true">group</i>
-                        <span class="mdc-button__label">Answer Call</span>
-                     </button>--%>
 
             </div>
     </div>

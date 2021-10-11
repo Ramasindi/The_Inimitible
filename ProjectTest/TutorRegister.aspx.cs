@@ -54,8 +54,13 @@ namespace ProjectTest
                                     userFirstname.Value = user.firstname;
                                 if (user.surname != null)
                                     userSurname.Value = user.surname;
-                                if (user.dob != null)
+                                if (user.dob != null) { 
                                     userdob.Attributes.Add("value", user.dob.ToString("yyyy-MM-dd"));
+                                }
+                                else
+                                {
+                                    userdob.Attributes.Add("value", user.dob.ToString("2000-01-01"));
+                                }
                                 if (user.gender != null)
                                     userGender.Value = user.gender;
                                 if (user.contact != null)

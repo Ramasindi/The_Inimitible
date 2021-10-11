@@ -139,19 +139,25 @@ namespace ProjectTest
                     FirebaseResponse cart = client.Get("Carts/" + Session["CurrentUser"].ToString());
                     if (cart.Body != "null")
                     {
-                        //sub = client.Update("Subscriptions/" + Session["CurrentUser"].ToString(), mySub);
-                        cartplan.InnerText = currentPlan + " Plan";
-                        subscriptionValid.InnerText = "" + DateTime.Now.AddMonths(1).ToString("yyyy-MM-dd HH:mm");
-                        string EmailR = Session["CurrentUserEmail"].ToString();
-                        string PlanR = currentPlan + " Plan";
-                        string EndDateR = dt.ToString("yyyy-MM-dd");
+                        FirebaseResponse card = client.Get("Cards/" + Session["CurrentUser"].ToString());
+                        if (card.Body != "null")
+                        {
+                            sub = client.Update("Subscriptions/" + Session["CurrentUser"].ToString(), mySub);
+                            cartplan.InnerText = currentPlan + " Plan";
+                            subscriptionValid.InnerText = "" + DateTime.Now.AddMonths(1).ToString("yyyy-MM-dd HH:mm");
+                            string EmailR = Session["CurrentUserEmail"].ToString();
+                            string PlanR = currentPlan + " Plan";
+                            string EndDateR = dt.ToString("yyyy-MM-dd");
 
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Email", "sendReceipt('" + EmailR + "','" + PriceR + "','" + EndDateR + "','" + PlanR + "');", true);
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "chekoutModal();", true);
-                        //generating invoice
-                        invoiceDetails invoice = new invoiceDetails { planName = currentPlan + " Bundle", pricePaid = invPrice, paymentMethod = mySub.paymentMethod, startDate = mySub.startDate, endDate = mySub.endDate, email = Session["CurrentUserEmail"].ToString() };
-                        client.Set("Invoices/" + Session["CurrentUser"].ToString() + "/" + Guid.NewGuid().ToString(), invoice);
-
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Email", "sendReceipt('" + EmailR + "','" + PriceR + "','" + EndDateR + "','" + PlanR + "');", true);
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "chekoutModal();", true);
+                            //generating invoice
+                            invoiceDetails invoice = new invoiceDetails { planName = currentPlan + " Bundle", pricePaid = invPrice, paymentMethod = mySub.paymentMethod, startDate = mySub.startDate, endDate = mySub.endDate, email = Session["CurrentUserEmail"].ToString() };
+                            client.Set("Invoices/" + Session["CurrentUser"].ToString() + "/" + Guid.NewGuid().ToString(), invoice);
+                        }
+                        else {
+                            Response.Redirect("Profile.aspx");
+                        }
                     }
                     else
                     {
@@ -165,21 +171,30 @@ namespace ProjectTest
             {
                 FirebaseResponse cart = client.Get("Carts/" + Session["CurrentUser"].ToString());
                 if (cart.Body != "null")
-                {                   
-                    sub = client.Set("Subscriptions/" + Session["CurrentUser"].ToString(), mySub);
+                {
+                    FirebaseResponse card = client.Get("Cards/" + Session["CurrentUser"].ToString());
+                    if (card.Body != "null")
+                    {
+                        sub = client.Set("Subscriptions/" + Session["CurrentUser"].ToString(), mySub);
+                        cartplan.InnerText = currentPlan + " Plan";
+                        subscriptionValid.InnerText = "" + DateTime.Today.AddMonths(1);
+                        string EmailR = Session["CurrentUserEmail"].ToString();
+                        string PlanR = currentPlan + " Plan";
+                        string EndDateR = dt.ToString("yyyy-MM-dd");
+                        //generate invoice
+                        invoiceDetails invoice = new invoiceDetails { planName = currentPlan + " Bundle", pricePaid = invPrice, paymentMethod = mySub.paymentMethod, startDate = mySub.startDate, endDate = mySub.endDate, email = Session["CurrentUserEmail"].ToString() };
+                        client.Set("Invoices/" + Session["CurrentUser"].ToString() + "/" + Guid.NewGuid().ToString(), invoice);
+
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Email", "sendReceipt('" + EmailR + "','" + PriceR + "','" + EndDateR + "','" + PlanR + "');", true);
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "chekoutModal();", true);
+                    }
+                    else {
+                        Response.Redirect("Profile.aspx");
+                    }
+                    
 
 
-                    cartplan.InnerText = currentPlan + " Plan";
-                    subscriptionValid.InnerText =  "" + DateTime.Today.AddMonths(1);
-                    string EmailR = Session["CurrentUserEmail"].ToString();
-                    string PlanR = currentPlan + " Plan";
-                    string EndDateR = dt.ToString("yyyy-MM-dd");
-                    //generate invoice
-                    invoiceDetails invoice = new invoiceDetails { planName = currentPlan + " Bundle", pricePaid = invPrice, paymentMethod = mySub.paymentMethod, startDate = mySub.startDate, endDate = mySub.endDate, email = Session["CurrentUserEmail"].ToString() };
-                    client.Set("Invoices/" + Session["CurrentUser"].ToString() + "/" + Guid.NewGuid().ToString(), invoice);
-
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Email", "sendReceipt('"+EmailR+"','"+PriceR+"','"+EndDateR+"','"+PlanR+"');", true);
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "chekoutModal();", true);                  
+                              
                 }
                 else
                 {

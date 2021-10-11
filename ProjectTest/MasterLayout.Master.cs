@@ -43,6 +43,7 @@ namespace ProjectTest
                 tutEval.Visible = false;
                 invoices.Visible = false;
                 invoicesDiv.Visible = false;
+                tutorials.Visible = false;
             }
             else
             {
@@ -63,6 +64,7 @@ namespace ProjectTest
                         cartItems.Visible = false;
                         subu.InnerText = existingSub.plan;
                         liveSession.Visible = true;
+              
                     }
                     else
                     {
@@ -70,10 +72,12 @@ namespace ProjectTest
                         sub = client.Set("Subscriptions/" + Session["CurrentUser"].ToString() + "/status", "InActive");
                         cartItems.Visible = false;
                         subu.InnerText = "InActive";
+                        tutorials.Visible = false;
                     }
                 }
                 else
                 {
+                    tutorials.Visible = false;
                     FirebaseResponse cart = client.Get("Carts/" + Session["CurrentUser"].ToString());
                     if (cart.Body != "null")
                     {
@@ -111,6 +115,7 @@ namespace ProjectTest
                     tutEval.Visible = false;
                     invoices.Visible = false;
                     invoicesDiv.Visible = false;
+                    tutorials.Visible = false;
                 }
                 if (Session["CurrentUserRole"] as string == "STUDENT")
                 {
@@ -118,6 +123,12 @@ namespace ProjectTest
                     tutProfile.Visible = false;
                     tutEvalDiv.Visible = false;
                     tutEval.Visible = false;
+                }
+                if (Session["CurrentUserRole"].ToString() == "ADMIN  ") {
+                    cartItems.Visible = false;
+                    subu.InnerText = "ADMIN";
+                    liveSession.Visible = true;
+                    tutorials.Visible = true;
                 }
                // CartInfo.Visible = true;
             }

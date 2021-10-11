@@ -29,41 +29,78 @@ namespace ProjectTest
             Session["CurrentUser"] = (string)HttpContext.Current.Session["UserID"];
             Session["CurrentUserRole"] = (string)HttpContext.Current.Session["UserRole"];
             if (string.IsNullOrEmpty(Session["CurrentUser"] as string))
-            {
+            {              
                 Response.Redirect("Login.aspx");
             }
             if (Session["CurrentUserRole"].ToString() == "TUTOR  ")
             {
                 Response.Redirect("Home.aspx");
             }
-            FirebaseResponse invoices;
-            invoices = client.Get("Invoices/" + Session["CurrentUser"].ToString());
-            if (invoices.Body != "null")
+            if (Session["CurrentUserRole"].ToString() == "STUDENT")
             {
-                var json = invoices.Body;
-                string column = "";
-                string status;
-                Dictionary<string, invoiceDetails> elist = JsonConvert.DeserializeObject<Dictionary<string, invoiceDetails>>(json);
-                foreach (KeyValuePair<string, invoiceDetails> invoice in elist)
+                FirebaseResponse invoices;
+                invoices = client.Get("Invoices/" + Session["CurrentUser"].ToString());
+                if (invoices.Body != "null")
                 {
-                    if (invoice.Value.endDate <= DateTime.Now.AddHours(2))
+                    var json = invoices.Body;
+                    string column = "";
+                    string status;
+                    Dictionary<string, invoiceDetails> elist = JsonConvert.DeserializeObject<Dictionary<string, invoiceDetails>>(json);
+                    foreach (KeyValuePair<string, invoiceDetails> invoice in elist)
                     {
-                        status = "Completed";
+                        if (invoice.Value.endDate <= DateTime.Now.AddHours(2))
+                        {
+                            status = "Completed";
+                        }
+                        else
+                        {
+                            status = "Current";
+                        }
+                        column += "<tr><td> " + invoice.Value.email + " </td><td> " + invoice.Value.planName + "</td><td>R " + invoice.Value.pricePaid + " </td><td> " + invoice.Value.paymentMethod + " </td><td> " + invoice.Value.startDate.ToString("yyyy-MM-dd HH:mm") + " </td><td> " + invoice.Value.endDate.ToString("yyyy-MM-dd HH:mm") + " </td ><td> <button class='mdc-button mdc-button--raised'> <b style='color: goldenrod;'>" + status + "</b> </button></td></tr>";
                     }
-                    else
-                    {
-                        status = "Current";
-                    }
-                    column += "<tr><td> " + invoice.Value.email + " </td><td> " + invoice.Value.planName + "</td><td>R " + invoice.Value.pricePaid + " </td><td> " + invoice.Value.paymentMethod + " </td><td> " + invoice.Value.startDate.ToString("yyyy-MM-dd HH:mm") + " </td><td> " + invoice.Value.endDate.ToString("yyyy-MM-dd HH:mm") + " </td ><td> <button class='mdc-button mdc-button--raised'> <b style='color: goldenrod;'>" + status + "</b> </button></td></tr>";
+                    tableColumn.InnerHtml = column;
                 }
-                tableColumn.InnerHtml = column;
-            }
-            else
-            {
-                tableColumn.InnerHtml = "<h4>You currently have no any invoices to display. Once you purchase a Subscription your invoice detals will be displayed here. Thank you.</h4> <br />";
+                else
+                {
+                    tableColumn.InnerHtml = "<h4>You currently have no any invoices to display. Once you purchase a Subscription your invoice detals will be displayed here. Thank you.</h4> <br />";
 
+                }
             }
-            
+            else {//user is ADMIN
+                FirebaseResponse invo;
+                invo = client.Get("Invoices/");
+                if (invo.Body != "null")
+                {
+                    var json = invo.Body;
+                    string column = "";
+                    string status;
+                    Dictionary<string, invoiceDetails> elist = JsonConvert.DeserializeObject<Dictionary<string, invoiceDetails>>(json);
+                    foreach (string i in elist.Keys)
+                    {
+                        invo = client.Get("Invoices/" + i);
+                        Dictionary<string, invoiceDetails> list = JsonConvert.DeserializeObject<Dictionary<string, invoiceDetails>>(invo.Body);
+                        foreach (KeyValuePair<string, invoiceDetails> invoice in list)
+                        {
+                            if (invoice.Value.endDate <= DateTime.Now.AddHours(2))
+                            {
+                                status = "Completed";
+                            }
+                            else
+                            {
+                                status = "Current";
+                            }
+                            column += "<tr><td> " + invoice.Value.email + " </td><td> " + invoice.Value.planName + "</td><td>R " + invoice.Value.pricePaid + " </td><td> " + invoice.Value.paymentMethod + " </td><td> " + invoice.Value.startDate.ToString("yyyy-MM-dd HH:mm") + " </td><td> " + invoice.Value.endDate.ToString("yyyy-MM-dd HH:mm") + " </td ><td> <button class='mdc-button mdc-button--raised'> <b style='color: goldenrod;'>" + status + "</b> </button></td></tr>";
+
+                        }
+                    }
+                    tableColumn.InnerHtml = column;
+                }
+                else
+                {
+                    tableColumn.InnerHtml = "<h4>You currently have no any invoices to display. Once you purchase a Subscription your invoice detals will be displayed here. Thank you.</h4> <br />";
+
+                }
+            }
             
         }
     }

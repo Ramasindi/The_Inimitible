@@ -73,12 +73,6 @@
         </div>
         <!-- end of ex-basic-1 -->
         <!-- end of basic -->
-
-        <!-- Back To Top Button -->
-        <button onclick="topFunction()" id="myBtn">
-            <img src="assets/images/up-arrow.png" alt="alternative">
-        </button>
-        <!-- end of back to top button -->
     </form>
    
 </asp:Content>
