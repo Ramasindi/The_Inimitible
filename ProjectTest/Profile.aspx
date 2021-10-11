@@ -271,12 +271,12 @@
 					                                            <div class="bank-card__inner">
 						                                            <label class="bank-card__label">
 							                                            <span class="bank-card__hint">Month</span>
-							                                            <input type="text" class="bank-card__field" placeholder="MM" maxlength="2" id="expMonth" runat="server" title="Expiration Month" pattern="[0-9]{2}&0[1-9]|1[0-2]" name="mm-card" required>
+							                                            <input type="text" class="bank-card__field" placeholder="MM" maxlength="2" id="expMonth" runat="server" title="Expiration Month" pattern="[0-9]{2}" name="mm-card" required>
 						                                            </label>
 						                                            <span class="bank-card__separator">/</span>
 						                                            <label class="bank-card__label">
 							                                            <span class="bank-card__hint">Year</span>
-							                                            <input type="text" class="bank-card__field" placeholder="YY" maxlength="2" id="expYear" runat="server" title="Expiration year" pattern="[0-9]{2}&3[0]|[12][0-9]|[1-9]" name="year-card" required>
+							                                            <input type="text" class="bank-card__field" placeholder="YY" maxlength="2" id="expYear" runat="server" title="Expiration year" pattern="[0-9]{2}" name="year-card" required>
 						                                            </label>
 																	<div style="float: right;">
 																		<i class="fab fa-cc-mastercard fa-4x"></i>					                                           
