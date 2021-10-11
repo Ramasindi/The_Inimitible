@@ -360,7 +360,7 @@ li {
 /*     Home     */
 /****************/
 .home {
-	background-image: url(../assets/images/home.jpg);
+	background-image: url("https://firebasestorage.googleapis.com/v0/b/mind-academy-8357a.appspot.com/o/images%2Fhome.jpg?alt=media&token=49441a47-c516-4819-b76e-825086aaae7e");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
