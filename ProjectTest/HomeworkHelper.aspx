@@ -58,17 +58,20 @@
 
                                     var templateParams = {
                                         varSub: exampleFormControlInput1.value,
-                                        varEmail: exampleFormControlInput3.value,
+                                        varEmail: exampleFormControlInput2.value,
                                         message: exampleFormControlTextarea1.value,
-                                        phoneNumber: exampleFormControlInput2.value
+                                        phoneNumber: exampleFormControlInput3.value
 
                                     };
 
                                     emailjs.send('service_r1gg9om', 'template_g77l5yr', templateParams)
                                         .then(function () {
+                                            alertToast("success", "Email send successfully");
                                             console.log('SUCCESS!');
+                                            document.location.reload(true);
                                         }, function (error) {
                                             console.log('FAILED...', error);
+                                            alertToast("error", "Email not sent");
                                         });
                                 }
 
