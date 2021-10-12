@@ -67,11 +67,11 @@
                                     </div>
                                     <div class="form-group py-2 input-group-sm">
                                         <label for="dob">Date of Birth:</label>
-                                        <input type="date" required value="2001-01-01" class="form-control form-control-input" id="userdob" runat="server">
+                                        <input type="date" required value="2001-01-01" min="1950-04-01" max="2022-04-30" class="form-control form-control-input" id="userdob" runat="server">
                                     </div>
                                     <div class="form-group py-2 input-group-sm">
                                         <label for="contact">Contact Number:</label>
-                                        <input type="tel" required class="form-control form-control-input" id="contact" runat="server" placeholder="Contact">
+                                        <input type="tel" required class="form-control form-control-input" id="contact" maxlength="10" pattern="[0-9]{10}" title="Must be 10 digits" runat="server" placeholder="Contact">
                                     </div>
                                     <div class="form-group py-2 input-group-sm">
                                         <label for="userGender">Gender:</label>

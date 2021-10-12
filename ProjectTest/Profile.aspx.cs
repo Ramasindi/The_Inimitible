@@ -48,11 +48,12 @@ namespace ProjectTest
                         {
                             //student details
                             User = client.Get("Students/" + Session["CurrentUser"].ToString());
+                            loggedEmail = Session["CurrentUserEmail"].ToString();
                             if (User.Body != "null")
                             {
                                 UserInfo user = User.ResultAs<UserInfo>();
                                 userEmail.Value = Session["CurrentUserEmail"].ToString();
-                                loggedEmail = Session["CurrentUserEmail"].ToString();
+                                
                                 if (!string.IsNullOrEmpty(Session["CurrentUserRole"] as string))
                                 {
                                     if (user.firstname != null)
@@ -81,7 +82,7 @@ namespace ProjectTest
                             }
                             else
                             {
-                                status.InnerHtml = "<div class='alert alert-success'><strong> Info! </strong > No Prifile Details FOUND!</a>.</div>";
+                                status.InnerHtml = "<div class='alert alert-success'><strong> Info! </strong > No Profile Details FOUND!</a>.</div>";
                             }
                             //student Card details
                             Card = client.Get("Cards/" + Session["CurrentUser"].ToString());

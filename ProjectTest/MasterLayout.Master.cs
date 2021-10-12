@@ -93,9 +93,15 @@ namespace ProjectTest
                     FirebaseResponse tut = client.Get("Tutors/" + Session["CurrentUser"].ToString());
                     CartInfo.Visible = true;
                     cartItems.Visible = false;
+                    services.Visible = false;
                     if (tut.Body != "null")
                     {
+                        
                         UserInfo u = tut.ResultAs<UserInfo>();
+                        if (u.status == null)
+                        {
+                            CartInfo.Visible = false;
+                        }
                         subu.InnerText = u.status;//check approval
                         if (u.status == "Pending")
                         {
@@ -104,6 +110,7 @@ namespace ProjectTest
                         else {
                             liveSession.Visible = true;
                         }
+                        
                     }
                     else
                     {

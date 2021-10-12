@@ -356,7 +356,7 @@
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" id="editProfile" visible="false" />
+                        <a href="TutorRegister.aspx" style="text-decoration:none" class="profile-edit-btn" name="btnAddMore" >Edit Profile</a>
                     </div>
                 </div>
                 <div class="row">

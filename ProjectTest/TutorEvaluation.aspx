@@ -50,7 +50,7 @@
                                    console.log($("#myAccount").val());
                                    emailjs.send('service_86pd4e9', 'template_d4bdy8a', templateParams)
                                        .then(function (response) {
-                                           alertToast("success", "Email send successfully");
+                                           alertToast("success", "Email sent successfully");
                                            setTimeout(function () {
                                                document.location.reload(true);
                                            }, 2000);
@@ -77,7 +77,7 @@
                                        .then(function onSuccess(res) {
                                        emailjs.send('service_86pd4e9', 'template_d4bdy8a', templateParams)
                                        .then(function (response) {
-                                           alertToast("success", "Email send successfully");
+                                           alertToast("success", "Email sent successfully");
                                            setTimeout(function () {
                                                document.location.reload(true);
                                            }, 2000);
@@ -116,10 +116,5 @@
         <!-- end of ex-basic-1 -->
         <!-- end of basic -->
             </div>
-        <!-- Back To Top Button -->
-        <button onclick="topFunction()" id="myBtn">
-            <img src="assets/images/up-arrow.png" alt="alternative">
-        </button>
-        <!-- end of back to top button -->
    
 </asp:Content>

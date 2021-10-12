@@ -46,17 +46,21 @@ namespace ProjectTest
                     foreach (KeyValuePair<string, UserInfo> tut in elist)
                     {
                         isPending = true;
-                        string img = "./assets/images/login.jpg";
-                        if (!string.IsNullOrEmpty(tut.Value.picture)) {
-                            img = tut.Value.picture;
-                        }
+                        string img = "https://firebasestorage.googleapis.com/v0/b/mind-academy-8357a.appspot.com/o/images%2Flogin.jpg?alt=media&token=6bc850bd-ecc0-4b56-8762-7880b318bee0";
+                        string trans = "#";
+                        string transText = "Download Transcript";
+                        string doc = "#";
+                        string docText = "Download ID";
+                        if (!string.IsNullOrEmpty(tut.Value.picture)) {img = tut.Value.picture;}
+                        if (!string.IsNullOrEmpty(tut.Value.transcipt)) { trans = tut.Value.transcipt; } else { transText = "No Transcript Document"; }
+                        if (!string.IsNullOrEmpty(tut.Value.idDocument)) { doc = tut.Value.idDocument; } else { docText = "No ID Document"; }
                         if (tut.Value.status == "Pending") { 
                         tutorDiv += "<div><div class='card' style='width:400px'>" +
                             "<img class='card-img-top' src='" + img+ "' alt='Card image' style='width: 100%;'/>" +
                             "<div class='card-body'><h4 class='card-title'>"+tut.Value.firstname +" " +tut.Value.surname+"</h4>" +
                             "<p class='card-text'>"+tut.Value.about+"</p>" +
-                            "<p class='card-text'><a style='color: blue' href='"+tut.Value.transcipt+"'>Download Transcript</a></p>" +
-                            "<p class='card-text'><a style='color: blue' href='"+tut.Value.idDocument+"'>Download ID</a></p><br />" +
+                            "<p class='card-text'><a style='color: blue' href='"+trans+"'> "+transText+" </a></p>" +
+                            "<p class='card-text'><a style='color: blue' href='"+doc+"'> "+docText+" </a></p><br />" +
                             "<Button type='button' style='float: left' class='mdc-button mdc-button--raised' name='approve'  value='" + tut.Value.email + "' data-uid='"+tut.Value.UserID+"'>Appove</Button>" +
                             "<Button type='button' style='float: right' class='mdc-button mdc-button--outlined' data-toggle='modal' data-target='#form"+counter+"' >Reject</Button>" +
                             "</div></div><br /></div>";

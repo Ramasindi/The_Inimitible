@@ -144,16 +144,67 @@ function SignUserWithGoogle(page) {
                 writeNewUser(result, "STUDENT");
                 if (page == "Login.aspx") {
                     document.getElementById("googleLogSpinner").style.display = "none";
+                    alertToast("success", "Signed in successfully");
+                    sendCurrentUser(result.user.uid, "Home.aspx", "STUDENT", result.user.email);
                 } else {
                     document.getElementById("googleSignSpinner").style.display = "none";
+                    alertToast("success", "Signed in successfully");
+                    sendCurrentUser(result.user.uid, "Home.aspx", "STUDENT", result.user.email);
                 }
                
             } else {
-                document.getElementById("googleLogSpinner").style.display = "none";
-                //HANDLE TO DETERMINE ROLE
-                sendCurrentUser(result.user.uid, "Home.aspx", "STUDENT", result.user.email);               
+                var role;
+                var studentRef = firebase.database().ref('Students/' + result.user.uid);
+                var tutorRef = firebase.database().ref('Tutors/' + result.user.uid);
+                var adminRef = firebase.database().ref('Administrators/' + result.user.uid);
+                studentRef.on('value', function (snapshot) {
+                    if (snapshot.exists()) {
+                        role = snapshot.val().role.toUpperCase();
+                        if (page == "Login.aspx") {
+                            document.getElementById("googleLogSpinner").style.display = "none";
+                        } else {
+                            document.getElementById("googleSignSpinner").style.display = "none";
+                        }
+                        alertToast("success", "Signed in successfully");
+                        sendCurrentUser(result.user.uid, "Home.aspx", role, result.user.email);
+                        return;
+                    } else {
+                        tutorRef.on('value', function (snapshot) {
+                            if (snapshot.exists()) {
+                                role = snapshot.val().role.toUpperCase();
+                                if (page == "Login.aspx") {
+                                    document.getElementById("googleLogSpinner").style.display = "none";
+                                } else {
+                                    document.getElementById("googleSignSpinner").style.display = "none";
+                                }
+                                alertToast("success", "Signed in successfully");
+                                sendCurrentUser(result.user.uid, "Home.aspx", role, result.user.email);
+                                return;
+                            } else {
+                                adminRef.on('value', function (snapshot) {
+                                    if (snapshot.exists()) {
+                                        role = snapshot.val().role.toUpperCase();
+                                        if (page == "Login.aspx") {
+                                            document.getElementById("googleLogSpinner").style.display = "none";
+                                        } else {
+                                            document.getElementById("googleSignSpinner").style.display = "none";
+                                        }
+                                        alertToast("success", "Signed in successfully");
+                                        sendCurrentUser(result.user.uid, "Home.aspx", role, result.user.email);
+                                        return;
+                                    } else {
+                                        console.log("Not Admin");
+                                    }
+                                });
+                                console.log("Not Tutor");
+                            }
+                        });
+                        console.log("Not Student");
+                    }
+                });
+                              
             }
-            alertToast("success","Signed in successfully");
+           
         }).catch((error) => {
             // Handle Errors here.    
             var errorMessage = error.message;
@@ -183,20 +234,36 @@ function signWithFB(page) {
                 writeNewUser(result, "STUDENT");
                 if (page == "Login.aspx") {
                     document.getElementById("facebookLogSpinner").style.display = "none";
+                    sendCurrentUser(result.user.uid, "Home.aspx", "STUDENT", result.user.email);
+                    alertToast("success", "Signed in successfuly");
                 } else {
                     document.getElementById("facebookSignSpinner").style.display = "none";
+                    alertToast("success", "Signed in successfuly");
+                    sendCurrentUser(result.user.uid, "Home.aspx", "STUDENT", result.user.email);
                 }                
             } else {
-                document.getElementById("facebookLogSpinner").style.display = "none";
-                //HANDLE TO DETERMINE ROLE
-                sendCurrentUser(result.user.uid, "Home.aspx", "STUDENT", result.user.email);
-                
+                document.getElementById("facebookLogSpinner").style.display = "none";{
+                    alertToast("success", "Signed in successfully");
+                    sendCurrentUser(result.user.uid, "Home.aspx", "STUDENT", result.user.email);
+                }
             }
-            alertToast("success","Signed in successfuly");
         })
         .catch((error) => {
             // Handle Errors here.
             var errorMessage = error.message;
+            if (error.code == "auth/account-exists-with-different-credential") {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Use email and password or Google Authentication if you are not a STUDENT.',
+                })
+                if (page === "Login.aspx") {
+                    document.getElementById("facebookLogSpinner").style.display = "none";
+                } else {
+                    document.getElementById("facebookSignSpinner").style.display = "none";
+                }
+                return;
+            }
             if (page === "Login.aspx") {
                 document.getElementById("loginAlert").innerHTML = "<strong>Error!</strong> '" + errorMessage + "'";
                 document.getElementById("facebookLogSpinner").style.display = "none";
