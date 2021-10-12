@@ -53,7 +53,7 @@
 
                         </div>
                         <div class="col-lg-6 d-flex align-items-center" data-aos="fade-down">
-                            <img class="img-fluid d-none d-lg-block" src="https://firebasestorage.googleapis.com/v0/b/mind-academy-8357a.appspot.com/o/images%2Flogin.jpg?alt=media&token=6bc850bd-ecc0-4b56-8762-7880b318bee0" loading="eager" alt="login">
+                            <img class="img-fluid d-none d-lg-block" src="https://firebasestorage.googleapis.com/v0/b/mind-academy-8357a.appspot.com/o/images%2Flogin1.jpg?alt=media&token=bc44a71a-831d-40bc-9f28-da9ccb84b7b7" loading="eager" alt="login">
                         </div>
                     </div>
                     <br />

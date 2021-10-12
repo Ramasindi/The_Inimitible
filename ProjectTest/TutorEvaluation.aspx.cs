@@ -46,7 +46,7 @@ namespace ProjectTest
                     foreach (KeyValuePair<string, UserInfo> tut in elist)
                     {
                         isPending = true;
-                        string img = "https://firebasestorage.googleapis.com/v0/b/mind-academy-8357a.appspot.com/o/images%2Flogin.jpg?alt=media&token=6bc850bd-ecc0-4b56-8762-7880b318bee0";
+                        string img = "https://firebasestorage.googleapis.com/v0/b/mind-academy-8357a.appspot.com/o/images%2Flogin1.jpg?alt=media&token=bc44a71a-831d-40bc-9f28-da9ccb84b7b7";
                         string trans = "#";
                         string transText = "Download Transcript";
                         string doc = "#";
