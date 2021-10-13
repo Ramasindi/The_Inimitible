@@ -138,6 +138,42 @@
                                     <label for="communication">Preferred Communication Languages:</label>
                                     <input type="text" required class="form-control form-control-input" id="communication" runat="server" placeholder="Isizulu, Sotho & English">
                                 </div>
+                                <label>Select only streams you are willing to teach.</label><br />
+                                <div class="form-check-inline">
+                                  <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" id="agri" runat="server" value="Agricultural">Agriculture
+                                  </label>
+                                </div>
+                                <div class="form-check-inline">
+                                  <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" id="art" runat="server" value="Arts">Arts & Culture
+                                  </label>
+                                </div>
+                                <div class="form-check-inline">
+                                  <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" id="lan" runat="server" value="Languages" >Languages
+                                  </label>
+                                </div>
+                                <div class="form-check-inline">
+                                  <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" id="mat" runat="server" value="Maths">Mathematics
+                                  </label>
+                                </div>
+                                <div class="form-check-inline">
+                                  <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" id="sci" runat="server" value="Sciences">Science
+                                  </label>
+                                </div>
+                                <div class="form-check-inline">
+                                  <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" id="soc" runat="server" value="Social" >Social Studies
+                                  </label>
+                                </div>
+                                <div class="form-check-inline">
+                                  <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" id="serv" runat="server" value="Services" >General
+                                  </label>
+                                </div>
                             </div>
                             <div data-page="4" style="display: none;">
                                 <div class="tab">

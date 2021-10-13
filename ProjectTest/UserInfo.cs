@@ -5,7 +5,7 @@ using System.Web;
 
 namespace ProjectTest
 {
-   internal class UserInfo
+    internal class UserInfo
     {
         public string UserID { get; set; }
         public string role { get; set; }
@@ -32,6 +32,13 @@ namespace ProjectTest
         public string communication { get; set; }
         public string status { get; set; }
         public string picture { get; set; }
+        public bool Agricultural { get; set; }
+        public bool Arts { get; set; }
+        public bool Languages { get; set; }
+        public bool Maths { get; set; }
+        public bool Sciences {get;set;}
+        public bool Services { get; set; }
+        public bool Social { get; set; }
     }
 
 }

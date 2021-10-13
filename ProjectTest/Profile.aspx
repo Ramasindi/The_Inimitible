@@ -183,7 +183,7 @@
                                 </div>
                                 <div class="form-group py-2 input-group-sm">
                                     <label for="contact">Enter Contact:</label>
-                                    <input type="tel" required class="form-control form-control-input" id="contact" runat="server" placeholder="Contact">
+                                    <input type="tel" required class="form-control form-control-input" maxlength="10" pattern="[0-9]{10}" title="Must be 10 digits" id="contact" runat="server" placeholder="Contact">
                                 </div>
                                 <div class="form-group py-2 input-group-sm">
                                     <label for="userGender">Select your Gender:</label>

@@ -120,6 +120,11 @@
                             </li>
                             <li id="profileMyAcc" runat="server"><a class="dropdown-item" href="Profile.aspx">Profile</a></li>
 
+                            <li id="searchDiv" runat="server">
+                                <div class="dropdown-divider"></div>
+                            </li>
+                            <li id="search" runat="server"><a class="dropdown-item" href="TutorSearch.aspx">Find a Tutor</a></li>
+
                             <li id="invoicesDiv" runat="server">
                                 <div class="dropdown-divider"></div>
                             </li>

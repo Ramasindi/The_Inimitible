@@ -1,6 +1,14 @@
 ﻿<%@ Page Title="MentorshipProgramme" Language="C#" MasterPageFile="~/MasterLayout.Master" AutoEventWireup="true" CodeBehind="MentorshipProgramme.aspx.cs" Inherits="ProjectTest.MentorshipProgramme" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // https://dashboard.emailjs.com/admin/integration
+            emailjs.init('user_TjtBcV3LlvcDaI2f0NHFq');
+        })();
+    </script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -15,25 +23,50 @@
                             <p class="para-light">Enjoy the luxury of having you own personal mentor. With just a few clicks you'll be set and ready to go.</p>
                         </div>
                         <div>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form-group py-2">
-                                        <input type="email" class="form-control form-control-input" id="exampleFormControlInput2" placeholder="Enter phone number">
+                            <div class="form-group py-1">
+                                        <input type="number" class="form-control form-control-input" maxlength="10" pattern="[0-9]{10}" title="Must be 10 digits" id="exampleFormControlInput2" placeholder="Enter phone number">
                                     </div>
-                                </div>
-                                <div class="col-lg-6">
-                                </div>
-                            </div>
                             <div class="form-group py-1">
                                 <input type="email" class="form-control form-control-input" id="exampleFormControlInput3" placeholder="Enter email">
                             </div>
                             <div class="form-group py-2">
-                                <p style="color: aqua">Tell us about yourself. Strengths, weaknesses, hobbies. What other commitmments do you have apart from school? Do you play any sports, are you in the school choir? What are your short and long term goals?</p>
+                                <p class="para-light">Tell us about yourself. Strengths, weaknesses, hobbies. What other commitmments do you have apart from school? Do you play any sports, are you in the school choir? What are your short and long term goals?</p>
                                 <textarea class="form-control form-control-input" id="exampleFormControlTextarea1" rows="6" placeholder="Lets us get to know you!"></textarea>
                             </div>
                         </div>
+
+
+                        <script type="text/javascript">
+                            function sendMail() {
+                                var templateParams = {
+                                    email: $("#exampleFormControlInput3").val(),
+                                    phonenumber: $("#exampleFormControlInput2").val(),
+                                    message: $("#exampleFormControlTextarea1").val(),
+
+                                };
+                                if (templateParams.message.length > 1 && templateParams.email.length > 3 && templateParams.phonenumber.length > 1) {
+                                    emailjs.send('service_r1gg9om', 'template_e5n2foc', templateParams)
+                                        .then(function (response) {
+                                            alertToast("success", "Email sent successfully");
+                                            console.log('SUCCESS!', response.status, response.text);
+                                            document.location.reload(true)
+                                        }, function (error) {
+                                            alertToast("error", "OOps...Email not sent.");
+                                            console.log('FAILED...', error);
+                                        });
+                                } else {
+                                    alertToast("error", "Oops...Your Input is invalid");
+                                }
+                            }
+
+                        </script>
+
+
+
+                      
+
                         <div class="my-3">
-                            <a class="btn form-control-submit-button" href="#your-link">Join!</a>
+                           <button type="button" class="btn form-control-submit-button" onclick="sendMail()">Get Started!</button>
                         </div>
                     </div>
                     <!-- end of div -->

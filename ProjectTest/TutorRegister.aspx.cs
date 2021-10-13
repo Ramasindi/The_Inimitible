@@ -84,7 +84,7 @@ namespace ProjectTest
                                 if (user.communication != null)
                                     communication.Value = user.communication;
                                 if (user.about != null)
-                                    aboutArea.Value = user.about;
+                                    aboutArea.Value = user.about;                               
                                 //Files, remove required if it is already in the db
                                 if (user.transcipt != null)
                                     transcript.Attributes.Remove("required");
@@ -93,7 +93,22 @@ namespace ProjectTest
                                 if (user.idDocument != null) 
                                     idFile.Attributes.Remove("required");
                                 if (user.picture != null) 
-                                    picture.Attributes.Remove("required");                              
+                                    picture.Attributes.Remove("required");
+                                //subjects
+                                if (user.Agricultural == true)
+                                    agri.Checked = true;
+                                if (user.Arts == true)
+                                    art.Checked = true;
+                                if (user.Languages == true)
+                                    lan.Checked = true;
+                                if (user.Maths == true)
+                                    mat.Checked = true;
+                                if (user.Sciences == true)
+                                    sci.Checked = true;
+                                if (user.Social == true)
+                                    soc.Checked = true;
+                                if (user.Services == true)
+                                    serv.Checked = true;
                             }
                         }
                         else
@@ -113,13 +128,44 @@ namespace ProjectTest
         }
         private async void UpdateUser()
         {
-            string idFileLink = ""; string matricFileLink = ""; string transcriptFileLink = ""; string otherFileLink = ""; string pictureFileLink = "";
+            if (agri.Checked) {
+                client.Set("Subjects/Agricultural/" + Session["CurrentUser"].ToString() + "/email", Session["CurrentUserEmail"].ToString());
+            }
+            if (art.Checked)
+            {
+                client.Set("Subjects/Arts/" + Session["CurrentUser"].ToString() + "/email", Session["CurrentUserEmail"].ToString());
+            }
+            if (lan.Checked)
+            {
+                client.Set("Subjects/Languages/" + Session["CurrentUser"].ToString() + "/email", Session["CurrentUserEmail"].ToString());
+            }
+            if (mat.Checked)
+            {
+                client.Set("Subjects/Maths/" + Session["CurrentUser"].ToString() + "/email", Session["CurrentUserEmail"].ToString());
+            }
+            if (sci.Checked)
+            {
+                client.Set("Subjects/Sciences/" + Session["CurrentUser"].ToString() + "/email", Session["CurrentUserEmail"].ToString());
+            }
+            if (soc.Checked)
+            {
+                client.Set("Subjects/Social/" + Session["CurrentUser"].ToString() + "/email", Session["CurrentUserEmail"].ToString());
+            }
+            if (serv.Checked)
+            {
+                client.Set("Subjects/Services/" + Session["CurrentUser"].ToString() + "/email", Session["CurrentUserEmail"].ToString());
+            }
+
+            string idFileLink = ""; string matricFileLink = ""; string transcriptFileLink = ""; string otherFileLink = ""; string pictureFileLink = ""; string tutstatus = "";
             //incase user update or not
             FirebaseResponse User;
             User = client.Get("Tutors/" + Session["CurrentUser"].ToString());
             if (User.Body != "null")
             {
                 UserInfo user = User.ResultAs<UserInfo>();
+                //if (user.Agricultural == true ) {
+                //    
+                //}
                 if (user.transcipt != null)
                     transcriptFileLink = user.transcipt;
                 if (user.matricCert != null)
@@ -130,6 +176,14 @@ namespace ProjectTest
                     pictureFileLink = user.picture;
                 if (user.supportDoc != null)
                     otherFileLink = user.supportDoc;
+                if (user.status != null)
+                {
+                    tutstatus = user.status;
+                }
+                else
+                {
+                    tutstatus = "Pending";
+                }
             }
 
             if (idFile.PostedFile.ContentLength != 0)
@@ -210,14 +264,23 @@ namespace ProjectTest
                 onlineSession = online.Value,
                 inPersonSession = inPerson.Value,
                 about = aboutArea.Value,
-                status = "Pending",
+                status = tutstatus,
                 communication = communication.Value,
                 //documents
                 idDocument = idFileLink,
                 matricCert = matricFileLink,
                 transcipt = transcriptFileLink,
                 supportDoc = otherFileLink,
-                picture = pictureFileLink
+                picture = pictureFileLink,
+                //subjects
+                Agricultural = agri.Checked,
+                Arts = art.Checked,
+                Languages = lan.Checked,
+                Maths = mat.Checked,
+                Sciences = sci.Checked,
+                Social = soc.Checked,
+                Services = serv.Checked
+                
 
             };
             FirebaseResponse response;
@@ -226,10 +289,7 @@ namespace ProjectTest
             {
                 userInfo.role = "Tutor";
                 response = client.Set("Tutors/" + Session["CurrentUser"].ToString(), userInfo);
-                UserInfo result = response.ResultAs<UserInfo>();
-               // status.InnerHtml = "<div class='alert alert-success'><strong> Success! </strong > Your Tutor Details have been updated</a>.</div>" +
-               //"<div class='loader'></div>";
-       
+                UserInfo result = response.ResultAs<UserInfo>();      
                     Response.Redirect("TutorProfile.aspx",false);
             }
         }

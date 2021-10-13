@@ -44,6 +44,8 @@ namespace ProjectTest
                 invoices.Visible = false;
                 invoicesDiv.Visible = false;
                 tutorials.Visible = false;
+                searchDiv.Visible = false;
+                search.Visible = false;
             }
             else
             {
@@ -73,6 +75,8 @@ namespace ProjectTest
                         cartItems.Visible = false;
                         subu.InnerText = "InActive";
                         tutorials.Visible = false;
+                        searchDiv.Visible = false;
+                        search.Visible = false;
                     }
                 }
                 else
@@ -94,6 +98,8 @@ namespace ProjectTest
                     CartInfo.Visible = true;
                     cartItems.Visible = false;
                     services.Visible = false;
+                    searchDiv.Visible = false;
+                    search.Visible = false;
                     if (tut.Body != "null")
                     {
                         
