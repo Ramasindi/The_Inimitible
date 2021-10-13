@@ -32,13 +32,13 @@ namespace ProjectTest
         public string communication { get; set; }
         public string status { get; set; }
         public string picture { get; set; }
-        public bool Agricultural { get; set; }
-        public bool Arts { get; set; }
-        public bool Languages { get; set; }
-        public bool Maths { get; set; }
-        public bool Sciences {get;set;}
-        public bool Services { get; set; }
-        public bool Social { get; set; }
+        public string Agricultural { get; set; }
+        public string Arts { get; set; }
+        public string Languages { get; set; }
+        public string Maths { get; set; }
+        public string Sciences { get; set; }
+        public string Services { get; set; }
+        public string Social { get; set; }
     }
 
 }

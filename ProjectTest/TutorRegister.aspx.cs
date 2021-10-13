@@ -95,20 +95,27 @@ namespace ProjectTest
                                 if (user.picture != null) 
                                     picture.Attributes.Remove("required");
                                 //subjects
-                                if (user.Agricultural == true)
-                                    agri.Checked = true;
-                                if (user.Arts == true)
-                                    art.Checked = true;
-                                if (user.Languages == true)
-                                    lan.Checked = true;
-                                if (user.Maths == true)
-                                    mat.Checked = true;
-                                if (user.Sciences == true)
-                                    sci.Checked = true;
-                                if (user.Social == true)
-                                    soc.Checked = true;
-                                if (user.Services == true)
-                                    serv.Checked = true;
+                                if (user.Agricultural != null) { 
+                                   if (user.Agricultural == "True") { agri.Checked = true; } else { agri.Checked = false; }
+                                }
+                                if (user.Arts != null) {
+                                    if (user.Arts == "True") { art.Checked = true; } else { art.Checked = false; }
+                                }
+                                if (user.Languages != null) {
+                                    if (user.Languages == "True") { lan.Checked = true; } else { lan.Checked = false; }
+                                }
+                                if (user.Maths != null) {
+                                    if (user.Maths == "True") { mat.Checked = true; } else { mat.Checked = false; }
+                                }
+                                if (user.Sciences != null) {
+                                    if (user.Sciences == "True") { sci.Checked = true; } else { sci.Checked = false; }
+                                }
+                                if (user.Social != null)
+                                    if (user.Social == "True") { soc.Checked = true; } else { soc.Checked = false; }
+                                if (user.Services != null) {
+                                    if (user.Services == "True") { serv.Checked = true; } else { serv.Checked = false; }
+                                }
+                                    
                             }
                         }
                         else
@@ -273,14 +280,14 @@ namespace ProjectTest
                 supportDoc = otherFileLink,
                 picture = pictureFileLink,
                 //subjects
-                Agricultural = agri.Checked,
-                Arts = art.Checked,
-                Languages = lan.Checked,
-                Maths = mat.Checked,
-                Sciences = sci.Checked,
-                Social = soc.Checked,
-                Services = serv.Checked
-                
+                Agricultural = agri.Checked.ToString(),
+                Arts = art.Checked.ToString(),
+                Languages = lan.Checked.ToString(),
+                Maths = mat.Checked.ToString(),
+                Sciences = sci.Checked.ToString(),
+                Social = soc.Checked.ToString(),
+                Services = serv.Checked.ToString()
+
 
             };
             FirebaseResponse response;
